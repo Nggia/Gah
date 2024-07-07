@@ -63,15 +63,15 @@ end
  })
 
 local Toggle = items:CreateToggle({
-    Name = "Destroy All item Dropped",
+    Name = "Destroy All items Dropped",
     CurrentValue = false,
     Flag = "Toggle1",
     Callback = function(t)
 getgenv().destroyitems = t
 
-while getgenv().destroybows == true and wait(0.2) do
+while getgenv().destroyitems == true and wait(0.2) do
     for i, v in pairs(game:GetService("Workspace").Items:GetChildren()) do
-        if v.Name == "Gold" or v.Name == "Crystal" or v.Name == "Leaves" or v.Name == "Wood" or v.Name == "Emerald" or v.Name == "Void Shard" or v.Name == "Log" then
+        if v.Name == "Gold" or v.Name == "Crystal Chunk" or v.Name == "Leaves" or v.Name == "Wood" or v.Name == "Emerald" or v.Name == "Void Shard" or v.Name == "Log" then
         v:Destroy()
         end
         end
