@@ -63,7 +63,7 @@ end
  })
 
 local Toggle = items:CreateToggle({
-    Name = "Destroy All items Dropped",
+    Name = "Destroy All Ttems Dropped",
     CurrentValue = false,
     Flag = "Toggle1",
     Callback = function(t)
