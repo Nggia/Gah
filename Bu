@@ -37,7 +37,7 @@ getgenv().destroybows = t
 
 while getgenv().destroybows == true and wait(0.2) do
     for i, v in pairs(game:GetService("Workspace").Items:GetChildren()) do
-        if v.Name == "Bow" or v.Name == "Iron Bow" or v.Name == "Crossbow" or v.Name == "Magnetite Crossbow" or v.Name =="Leaves" or v.Name =="Wood" then
+        if v.Name == "Bow" or v.Name == "Iron Bow" or v.Name == "Crossbow" or v.Name == "Magnetite Crossbow" or v.Name == "Leaves" or v.Name == "Wood" then
         v:Destroy()
         end
         end
