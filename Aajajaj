@@ -169,8 +169,8 @@ local listed = {
 1426606839, -- hackcc16
 3899214734, -- chemhan78121
 3896699123, -- chemhan21323
-1370768463 -- hackcc11
-1544352877 -- Evil_DarkGamer1
+1370768463, -- hackcc11
+1544352877, -- Evil_DarkGamer1
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
