@@ -57,7 +57,7 @@ local listed = {
 4841562468, -- acsellcuavvss08
 4446507245, -- BaoTrumToxic
 6119513874, --lucnguyen9
-1782620303, --NHD_ZxKhangSenPaixZ
+6112511581, --NghiaGyGy
 
 }
 _G.WhiteListed = false
