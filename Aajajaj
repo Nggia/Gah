@@ -41,136 +41,24 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 local listed = {
-3718164790, -- minhiivy123A
-1485440429, -- hieutrungze
-1566703867, -- Ekko_gaming10
-3913846312, -- anhlapro1aa
-2451054123, -- hoan123444421
-1811121760, -- ChanhProGamer
-5027369692, -- QuaLeKhongLo
-1141261219, -- bemancau
-2614833950, -- haodepzainhat123456
-1708655181, -- Cooki_Hieu
-818126717, -- chanhcho200912
-4960088701, -- PenikTrugDaiMu
-463465033, -- vuichtuan09
-4475140933, -- lekiet07989
-4513872025, -- Tommy27h
-4966584607, -- NgocTrinhh2k3
-1177968786, -- btthanh123
-4810192848, -- modesosinh7
-635645976, -- TuanKhaiCFL
-4446507245, -- BaoTrumToxic
-314763640, -- letranminh5
-1290417002, -- ccqn004
-1408212935, -- Kirito_vnc
-3777705947, -- Dragon_Xayad
-2370889865, -- bollken2
-1529597528, -- datag10
-3170802162, -- issknshsusu
-1411247414, -- TNAE_SsThanhKunnsS
-3286439888, --NhanBoy07
-3199047367, -- VTAZONE2008
-986848272, -- TAU115TAI
-304648368, -- produydn1
-4141021120, -- iwxoxz
-4475215238, -- luongnhan52916
-712851393, -- trunghuy5
-618465845, -- noobdeptrai400
-233784440, -- KaraShaw7
-4863899811, -- NevandaNavas
-4795964374, -- tendcm
-1570525640, -- XxNguyen_SamaxX
-314763640, -- letranminh5
-876377767, -- vgfakemoon3
-1450900444, -- cyiutr1
-1220151559, -- dokaizen
-1329011010, -- hotfruit2510
-1810666877, -- Rareboxzs1
-3468253464, -- bao10_1
-2860632931, -- XxPhongMagmaxX
-857977140, -- xccfdhdi
-1792637340, -- Power_Gaming2k7
-3647697808, -- PeXuuZuTo
-1171387409, -- khangngauloi
-2635741505, -- BlackDragond123
-1943377434, -- Joker_XxTinhDarkxX
-3451151379, -- Nghiasen_legendary
-3993347755, -- conketlol5
-4669089478, -- nguuyenquanghuytu
-4872236019, -- nguyenquangdat012
-4736354449, -- nzxz13
-634413900, -- ShenFamus
-2605103756, -- Royal_Domination
-4059421765, -- accquaydffirstsea35
-4058001938, -- accquaydffirstsea34
-4056862638, -- accquaydffirstsea33
-4056585434, -- accquaydffirstsea32
-4056142639, -- accquaydffirstsea31
-4740726618, -- chemhan764239
-4055494125, -- accquaydffirstsea30
-4945123695, -- 1_xSxBuildTheSun
-4639567199, -- nguyenquanghuytu
-4641381230, -- anhnghiapro16
-2226394702, -- HadesTrum
-4732817476, -- ShipTrox
-4087605807, -- tinhkhenh1
-1814938572, -- TM_HuyDepZai
-1309541634, -- thaideptrai32g
-170967030, -- thai752005
-1309447883, -- thaiabbc
-2529508762, -- ChauBaolam29
-1347848913, -- cucsilau345
-1544046636, -- nghiahahi
-1855776836, -- hungfc573
-1165679906, -- duy08duy08
-4850255262, -- 160kdaycnb109
-3381622523, -- 160kdaycnb1
-1254144943, -- khanhkaido9999
-1312230152, -- gigadian123
-4723792084, -- clmm98b
-1480130154, -- tokuda_jabanvn
-1129631079, -- apexbes2
-1490665232, -- DFGHTRU10
-3246732830, -- Hainclone2
-146022306, -- hainha0123456
-1810614004, -- Shadow_MainNoob
-1957434850, -- clonepk5
-4027558815, -- accquaydffirstsea1
-1423316156, -- ACE_xXAZPROGOD123Xx
-4048427595, --accquaydffirstsea21
-1322815101, -- azpro2k7
-2221229319, -- duongthai366
-1175626557, -- zxcandyxzz
-1821277569, -- Jack_Sama123
-1928941615, -- King_RareBox
-226801418, -- hieubom123
-660629515, -- LHPGamingVN
-170895715, -- ductx2004
-1075665647, -- khang20297
-1813673746, -- MagnusDiggory1
-175021965, -- huyduy909090
-3146985482, -- bl4ck1105
-4494066040, -- SimulatorDotio
-936844900, -- aztrear2
-4802073978, -- tuantuantuantuang
-1832777631, --EvilNumBer_1
-4254731743, --AHD_SIEUVIP
-1574447607, -- cacchutuoitom2000
-2045590029, -- Lucky_Oz4
-1221321256, -- bibimbin1
-2572841200, -- 4532Demon
-1421912436, -- TNAE_SsLiemDemonsS
-1782620303, -- NHD_ZxKhangSenPaixZ
-1461551082, -- tranvanvu17
-1067471780, -- GasFruit1
-6112511581, -- NghiaGyGy
-892917079, -- baxuan1242
-1426606839, -- hackcc16
-3899214734, -- chemhan78121
-3896699123, -- chemhan21323
-1370768463, -- hackcc11
+1090425738, -- SiroHokai
+5495870016, -- Kie_Zen09
 1544352877, -- Evil_DarkGamer1
+988983010, -- chauhoangkhanhvan
+988983921, -- duongtrungkien12
+6065103432, -- God_Yima
+601737078, -- yeukhanhvan123
+3066873172, -- TM_CurseQueen
+1857380395, -- siro_alt
+628829729, -- thanhsuper1010
+3534559167, -- trongsuper10100
+1466124082, --TM_ProSenpai12
+5040266835, --lancelot1712
+4841562468, -- acsellcuavvss08
+4446507245, -- BaoTrumToxic
+6119513874, --lucnguyen9
+1782620303, --NHD_ZxKhangSenPaixZ
+
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
@@ -347,7 +235,7 @@ _G.kick = true
             MainFrame.Name = "MainFrame"
             MainFrame.Parent = Lago
             MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-            MainFrame.BackgroundColor3 = Color3.fromRGB(22, 29, 31)
+            MainFrame.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
             MainFrame.ClipsDescendants = true
             MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
             MainFrame.Size = UDim2.new(0, 0, 0, 0)
@@ -358,7 +246,7 @@ _G.kick = true
         
             LeftFrame.Name = "LeftFrame"
             LeftFrame.Parent = MainFrame
-            LeftFrame.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+            LeftFrame.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
             LeftFrame.Size = UDim2.new(0, 190, 0, 484)
         
             LeftCorner.CornerRadius = UDim.new(0, 5)
@@ -367,21 +255,21 @@ _G.kick = true
         
             GlowTabHolder.Name = "GlowTabHolder"
             GlowTabHolder.Parent = LeftFrame
-            GlowTabHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            GlowTabHolder.BackgroundColor3 = Color3.fromRGB(79, 79, 79)
             GlowTabHolder.BackgroundTransparency = 1.000
             GlowTabHolder.BorderSizePixel = 0
             GlowTabHolder.Position = UDim2.new(0, -15, 0, -15)
             GlowTabHolder.Size = UDim2.new(1, 30, 1, 30)
             GlowTabHolder.ZIndex = 0
             GlowTabHolder.Image = "rbxassetid://4996891970"
-            GlowTabHolder.ImageColor3 = Color3.fromRGB(15, 15, 15)
+            GlowTabHolder.ImageColor3 = Color3.fromRGB(192, 192, 192)
             GlowTabHolder.ScaleType = Enum.ScaleType.Slice
             GlowTabHolder.SliceCenter = Rect.new(20, 20, 280, 280)
             
             
             Title.Name = "Title"
             Title.Parent = LeftFrame
-            Title.BackgroundColor3 = Color3.fromRGB(255, 0, 11)
+            Title.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
             Title.BackgroundTransparency = 1.000
             Title.Position = UDim2.new(0.097560972, 0, 0.0475206636, 0)
             Title.Size = UDim2.new(0, 111, 0, 34)
@@ -393,20 +281,20 @@ _G.kick = true
         
             BottomText.Name = "BottomText"
             BottomText.Parent = LeftFrame
-            BottomText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            BottomText.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
             BottomText.BackgroundTransparency = 1.000
             BottomText.Position = UDim2.new(0.097560972, 0, 0.0889999792, 0)
             BottomText.Size = UDim2.new(0, 113, 0, 28)
             BottomText.Font = Enum.Font.Gotham
             BottomText.Text = bottom
-            BottomText.TextColor3 = Color3.fromRGB(255, 255, 255)
+            BottomText.TextColor3 = Color3.fromRGB(28, 28, 28)
             BottomText.TextSize = 14.000
             BottomText.TextTransparency = 0.300
             BottomText.TextXAlignment = Enum.TextXAlignment.Left
         
             TabHold.Name = "TabHold"
             TabHold.Parent = LeftFrame
-            TabHold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            TabHold.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
             TabHold.BackgroundTransparency = 1.000
             TabHold.Position = UDim2.new(0, 0, 0.167355374, 0)
             TabHold.Size = UDim2.new(0, 190, 0, 403)
@@ -418,7 +306,7 @@ _G.kick = true
         
             Drag.Name = "Drag"
             Drag.Parent = MainFrame
-            Drag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Drag.BackgroundColor3 = Color3.fromRGB(192, 192, 192)
             Drag.BackgroundTransparency = 1.000
             Drag.Position = UDim2.new(0.290368259, 0, 0, 0)
             Drag.Size = UDim2.new(0, 501, 0, 23)
@@ -466,7 +354,7 @@ _G.kick = true
         
                 NotificationBase.Name = "NotificationBase"
                 NotificationBase.Parent = MainFrame
-                NotificationBase.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                NotificationBase.BackgroundColor3 = Color3.fromRGB(248, 248, 255)
                 NotificationBase.BackgroundTransparency = 1
                 NotificationBase.Size = UDim2.new(0, 706, 0, 484)
                 NotificationBase.AutoButtonColor = false
@@ -483,7 +371,7 @@ _G.kick = true
                 NotificationFrame.Name = "NotificationFrame"
                 NotificationFrame.Parent = NotificationBase
                 NotificationFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-                NotificationFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                NotificationFrame.BackgroundColor3 = Color3.fromRGB(192, 192, 192)
                 NotificationFrame.ClipsDescendants = true
                 NotificationFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
                 NotificationFrame.Size = UDim2.new(0, 0, 0, 0)
@@ -494,26 +382,26 @@ _G.kick = true
         
                 NotificationFrameGlow.Name = "NotificationFrameGlow"
                 NotificationFrameGlow.Parent = NotificationFrame
-                NotificationFrameGlow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                NotificationFrameGlow.BackgroundColor3 = Color3.fromRGB(192, 192, 192)
                 NotificationFrameGlow.BackgroundTransparency = 1.000
                 NotificationFrameGlow.BorderSizePixel = 0
                 NotificationFrameGlow.Position = UDim2.new(0, -15, 0, -15)
                 NotificationFrameGlow.Size = UDim2.new(1, 30, 1, 30)
                 NotificationFrameGlow.ZIndex = 0
                 NotificationFrameGlow.Image = "rbxassetid://4996891970"
-                NotificationFrameGlow.ImageColor3 = Color3.fromRGB(15, 15, 15)
+                NotificationFrameGlow.ImageColor3 = Color3.fromRGB(220, 220, 220)
                 NotificationFrameGlow.ScaleType = Enum.ScaleType.Slice
                 NotificationFrameGlow.SliceCenter = Rect.new(20, 20, 280, 280)
         
                 NotificationTitle.Name = "NotificationTitle"
                 NotificationTitle.Parent = NotificationFrame
-                NotificationTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                NotificationTitle.BackgroundColor3 = Color3.fromRGB(119, 136, 153)
                 NotificationTitle.BackgroundTransparency = 1.000
                 NotificationTitle.Position = UDim2.new(0.0400609747, 0, 0.0761325806, 0)
                 NotificationTitle.Size = UDim2.new(0, 111, 0, 34)
                 NotificationTitle.Font = Enum.Font.GothamBold
                 NotificationTitle.Text = Title.Text .. " | NOTIFICATION"
-                NotificationTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+                NotificationTitle.TextColor3 = Color3.fromRGB(119, 128, 144)
                 NotificationTitle.TextSize = 24.000
                 NotificationTitle.TextXAlignment = Enum.TextXAlignment.Left
                 NotificationTitle.TextTransparency = 1
@@ -527,7 +415,7 @@ _G.kick = true
                 CloseBtn.AutoButtonColor = false
                 CloseBtn.Font = Enum.Font.Gotham
                 CloseBtn.Text = buttontitle
-                CloseBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+                CloseBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
                 CloseBtn.TextSize = 15.000
                 CloseBtn.TextTransparency = 1
                 CloseBtn.BackgroundTransparency = 1
@@ -538,13 +426,13 @@ _G.kick = true
         
                 NotificationDesc.Name = "NotificationDesc"
                 NotificationDesc.Parent = NotificationFrame
-                NotificationDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                NotificationDesc.BackgroundColor3 = Color3.fromRGB(192, 192, 192)
                 NotificationDesc.BackgroundTransparency = 1.000
                 NotificationDesc.Position = UDim2.new(0.112499997, 0, 0.266355127, 0)
                 NotificationDesc.Size = UDim2.new(0, 309, 0, 82)
                 NotificationDesc.Font = Enum.Font.Gotham
                 NotificationDesc.Text = desc
-                NotificationDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
+                NotificationDesc.TextColor3 = Color3.fromRGB(192, 192, 192)
                 NotificationDesc.TextSize = 15.000
                 NotificationDesc.TextWrapped = true
                 NotificationDesc.TextTransparency = 1
@@ -653,13 +541,13 @@ _G.kick = true
                 Tab.AutoButtonColor = false
                 Tab.Font = Enum.Font.SourceSans
                 Tab.Text = ""
-                Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+                Tab.TextColor3 = Color3.fromRGB(245, 245, 245)
                 Tab.TextSize = 14.000
                 Tab.BackgroundTransparency = 1
         
                 TabIcon.Name = "TabIcon"
                 TabIcon.Parent = Tab
-                TabIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                TabIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                 TabIcon.BackgroundTransparency = 1.000
                 TabIcon.Position = UDim2.new(0.0634146333, 0, 0.25, 0)
                 TabIcon.Size = UDim2.new(0, 20, 0, 20)
@@ -668,13 +556,13 @@ _G.kick = true
         
                 TabTitle.Name = "TabTitle"
                 TabTitle.Parent = Tab
-                TabTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                TabTitle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                 TabTitle.BackgroundTransparency = 1.000
                 TabTitle.Position = UDim2.new(0.1902439, 0, 0.25, 0)
                 TabTitle.Size = UDim2.new(0, 113, 0, 19)
                 TabTitle.Font = Enum.Font.Gotham
                 TabTitle.Text = text
-                TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+                TabTitle.TextColor3 = Color3.fromRGB(255, 0, 0)
                 TabTitle.TextSize = 15.000
                 TabTitle.TextXAlignment = Enum.TextXAlignment.Left
                 TabTitle.TextTransparency = .3
@@ -686,7 +574,7 @@ _G.kick = true
                 Container.Name = "Container"
                 Container.Parent = ContainerFolder
                 Container.Active = true
-                Container.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Container.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                 Container.BackgroundTransparency = 1.000
                 Container.BorderSizePixel = 0
                 Container.Position = UDim2.new(0.321529746, 0, 0.0475206599, 0)
@@ -763,7 +651,7 @@ _G.kick = true
         
                     Button.Name = "Button"
                     Button.Parent = Container
-                    Button.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Button.ClipsDescendants = true
                     Button.Position = UDim2.new(0.370312512, 0, 0.552631557, 0)
                     Button.Size = UDim2.new(0, 457, 0, 43)
@@ -779,13 +667,13 @@ _G.kick = true
         
                     Title.Name = "Title"
                     Title.Parent = Button
-                    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Title.BackgroundTransparency = 1.000
                     Title.Position = UDim2.new(0.0822437406, 0, 0, 0)
                     Title.Size = UDim2.new(0, 113, 0, 42)
                     Title.Font = Enum.Font.Gotham
                     Title.Text = text
-                    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Title.TextSize = 15.000
                     Title.TextTransparency = 0.300
                     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -806,7 +694,7 @@ _G.kick = true
                     CircleSmall.Parent = Circle
                     CircleSmall.Active = true
                     CircleSmall.AnchorPoint = Vector2.new(0.5, 0.5)
-                    CircleSmall.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    CircleSmall.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     CircleSmall.BackgroundTransparency = 1.000
                     CircleSmall.Position = UDim2.new(0.485673368, 0, 0.503000021, 0)
                     CircleSmall.Size = UDim2.new(0, 9, 0, 9)
@@ -855,7 +743,7 @@ _G.kick = true
         
                     Toggle.Name = "Toggle"
                     Toggle.Parent = Container
-                    Toggle.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Toggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Toggle.ClipsDescendants = true
                     Toggle.Position = UDim2.new(0.110937506, 0, 0.67653507, 0)
                     Toggle.Size = UDim2.new(0, 457, 0, 43)
@@ -871,13 +759,13 @@ _G.kick = true
         
                     Title.Name = "Title"
                     Title.Parent = Toggle
-                    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Title.BackgroundTransparency = 1.000
                     Title.Position = UDim2.new(0.0822437406, 0, 0, 0)
                     Title.Size = UDim2.new(0, 113, 0, 42)
                     Title.Font = Enum.Font.Gotham
                     Title.Text = text
-                    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Title.TextSize = 15.000
                     Title.TextTransparency = 0.300
                     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -918,7 +806,7 @@ _G.kick = true
         
                     ToggleCircle.Name = "ToggleCircle"
                     ToggleCircle.Parent = ToggleFrame
-                    ToggleCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ToggleCircle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     ToggleCircle.Position = UDim2.new(0, 0, -0.272727281, 0)
                     ToggleCircle.Selectable = true
                     ToggleCircle.Size = UDim2.new(0, 17, 0, 17)
@@ -994,7 +882,7 @@ _G.kick = true
         
                     Slider.Name = "Slider"
                     Slider.Parent = Container
-                    Slider.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Slider.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Slider.ClipsDescendants = true
                     Slider.Position = UDim2.new(0.189062506, 0, 0.648612201, 0)
                     Slider.Size = UDim2.new(0, 457, 0, 60)
@@ -1010,13 +898,13 @@ _G.kick = true
         
                     Title.Name = "Title"
                     Title.Parent = Slider
-                    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Title.BackgroundTransparency = 1.000
                     Title.Position = UDim2.new(0.0822437406, 0, 0, 0)
                     Title.Size = UDim2.new(0, 113, 0, 42)
                     Title.Font = Enum.Font.Gotham
                     Title.Text = text
-                    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Title.TextSize = 15.000
                     Title.TextTransparency = 0.300
                     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -1063,7 +951,7 @@ _G.kick = true
         
                     SlideCircle.Name = "SlideCircle"
                     SlideCircle.Parent = SlideFrame
-                    SlideCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    SlideCircle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     SlideCircle.BackgroundTransparency = 1.000
                     SlideCircle.Position = UDim2.new((start or 0)/max, -6,-1.30499995, 0)
                     SlideCircle.Size = UDim2.new(0, 11, 0, 11)
@@ -1072,13 +960,13 @@ _G.kick = true
         
                     Value.Name = "Value"
                     Value.Parent = Title
-                    Value.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Value.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Value.BackgroundTransparency = 1.000
                     Value.Position = UDim2.new(2.27693367, 0, 0, 0)
                     Value.Size = UDim2.new(0, 113, 0, 41)
                     Value.Font = Enum.Font.Gotham
                     Value.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
-                    Value.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Value.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Value.TextSize = 15.000
                     Value.TextTransparency = 0.300
                     Value.TextXAlignment = Enum.TextXAlignment.Right
@@ -1154,7 +1042,7 @@ _G.kick = true
         
                     Dropdown.Name = "Dropdown"
                     Dropdown.Parent = Container
-                    Dropdown.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Dropdown.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Dropdown.ClipsDescendants = true
                     Dropdown.Position = UDim2.new(0.110937499, 0, 0.67653507, 0)
                     Dropdown.Size = UDim2.new(0, 457, 0, 43)
@@ -1170,13 +1058,13 @@ _G.kick = true
         
                     Title.Name = "Title"
                     Title.Parent = Dropdown
-                    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     Title.BackgroundTransparency = 1.000
                     Title.Position = UDim2.new(0.0822437406, 0, 0, 0)
                     Title.Size = UDim2.new(0, 113, 0, 42)
                     Title.Font = Enum.Font.Gotham
                     Title.Text = text
-                    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Title.TextSize = 15.000
                     Title.TextTransparency = 0.300
                     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -1197,7 +1085,7 @@ _G.kick = true
                     CircleSmall.Parent = Circle
                     CircleSmall.Active = true
                     CircleSmall.AnchorPoint = Vector2.new(0.5, 0.5)
-                    CircleSmall.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    CircleSmall.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     CircleSmall.BackgroundTransparency = 1.000
                     CircleSmall.Position = UDim2.new(0.485673368, 0, 0.503000021, 0)
                     CircleSmall.Size = UDim2.new(0, 9, 0, 9)
@@ -1209,7 +1097,7 @@ _G.kick = true
                     ArrowIco.Name = "ArrowIco"
                     ArrowIco.Parent = Title
                     ArrowIco.AnchorPoint = Vector2.new(0.5, 0.5)
-                    ArrowIco.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ArrowIco.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     ArrowIco.BackgroundTransparency = 1.000
                     ArrowIco.Position = UDim2.new(3.45979357, 0, 0.508096159, 0)
                     ArrowIco.Selectable = true
@@ -1220,14 +1108,14 @@ _G.kick = true
                     DropItemHolder.Name = "DropItemHolder"
                     DropItemHolder.Parent = Title
                     DropItemHolder.Active = true
-                    DropItemHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    DropItemHolder.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
                     DropItemHolder.BackgroundTransparency = 1.000
                     DropItemHolder.BorderSizePixel = 0
                     DropItemHolder.Position = UDim2.new(-0.203539819, 0, 1.02380955, 0)
                     DropItemHolder.Size = UDim2.new(0, 436, 0, 82)
                     DropItemHolder.CanvasSize = UDim2.new(0, 0, 0, 0)
                     DropItemHolder.ScrollBarThickness = 5
-                    DropItemHolder.ScrollBarImageColor3 = Color3.fromRGB(255, 255, 255)
+                    DropItemHolder.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
         
                     DropLayout.Name = "DropLayout"
                     DropLayout.Parent = DropItemHolder
@@ -1351,13 +1239,13 @@ _G.kick = true
         
                         Item.Name = "Item"
                         Item.Parent = DropItemHolder
-                        Item.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                        Item.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                         Item.ClipsDescendants = true
                         Item.Size = UDim2.new(0, 427, 0, 25)
                         Item.AutoButtonColor = false
                         Item.Font = Enum.Font.Gotham
                         Item.Text = v
-                        Item.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Item.TextColor3 = Color3.fromRGB(0, 0, 0)
                         Item.TextSize = 15.000
                         Item.TextTransparency = 0.300
         
@@ -1443,13 +1331,13 @@ _G.kick = true
         
                         Item.Name = "Item"
                         Item.Parent = DropItemHolder
-                        Item.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                        Item.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                         Item.ClipsDescendants = true
                         Item.Size = UDim2.new(0, 427, 0, 25)
                         Item.AutoButtonColor = false
                         Item.Font = Enum.Font.Gotham
                         Item.Text = addtext
-                        Item.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Item.TextColor3 = Color3.fromRGB(0, 0, 0)
                         Item.TextSize = 15.000
                         Item.TextTransparency = 0.300
         
@@ -1655,7 +1543,7 @@ _G.kick = true
         
                     Colorpicker.Name = "Colorpicker"
                     Colorpicker.Parent = Container
-                    Colorpicker.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Colorpicker.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Colorpicker.ClipsDescendants = true
                     Colorpicker.Position = UDim2.new(0.110937499, 0, 0.67653507, 0)
                     Colorpicker.Size = UDim2.new(0, 457, 0, 43)
@@ -1666,13 +1554,13 @@ _G.kick = true
         
                     Title.Name = "Title"
                     Title.Parent = Colorpicker
-                    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Title.BackgroundTransparency = 1.000
                     Title.Position = UDim2.new(0.0822437406, 0, 0, 0)
                     Title.Size = UDim2.new(0, 113, 0, 42)
                     Title.Font = Enum.Font.Gotham
                     Title.Text = "UI Color Setting"
-                    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Title.TextSize = 15.000
                     Title.TextTransparency = 0.300
                     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -1680,7 +1568,7 @@ _G.kick = true
         
                     ColorpickerBtn.Name = "ColorpickerBtn"
                     ColorpickerBtn.Parent = Title
-                    ColorpickerBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ColorpickerBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     ColorpickerBtn.BackgroundTransparency = 1.000
                     ColorpickerBtn.Position = UDim2.new(-0.336283177, 0, 0, 0)
                     ColorpickerBtn.Size = UDim2.new(0, 457, 0, 42)
@@ -1716,7 +1604,7 @@ _G.kick = true
         
                     Hue.Name = "Hue"
                     Hue.Parent = Title
-                    Hue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Hue.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Hue.Position = UDim2.new(0, 229, 0, 46)
                     Hue.Size = UDim2.new(0, 25, 0, 80)
         
@@ -1740,7 +1628,7 @@ _G.kick = true
                     HueSelection.Name = "HueSelection"
                     HueSelection.Parent = Hue
                     HueSelection.AnchorPoint = Vector2.new(0.5, 0.5)
-                    HueSelection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    HueSelection.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     HueSelection.BackgroundTransparency = 1.000
                     HueSelection.Position = UDim2.new(0.48, 0, 1 - select(1, Color3.toHSV(preset)))
                     HueSelection.Size = UDim2.new(0, 18, 0, 18)
@@ -1762,7 +1650,7 @@ _G.kick = true
                     ColorSelection.Name = "ColorSelection"
                     ColorSelection.Parent = Color
                     ColorSelection.AnchorPoint = Vector2.new(0.5, 0.5)
-                    ColorSelection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ColorSelection.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     ColorSelection.BackgroundTransparency = 1.000
                     ColorSelection.Position = UDim2.new(preset and select(3, Color3.toHSV(preset)))
                     ColorSelection.Size = UDim2.new(0, 18, 0, 18)
@@ -1772,13 +1660,13 @@ _G.kick = true
         
                     Toggle.Name = "Toggle"
                     Toggle.Parent = Title
-                    Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Toggle.BackgroundTransparency = 1.000
                     Toggle.Position = UDim2.new(2.37430048, 0, 1.07157099, 0)
                     Toggle.Size = UDim2.new(0, 137, 0, 38)
                     Toggle.Font = Enum.Font.Gotham
                     Toggle.Text = "Rainbow"
-                    Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Toggle.TextSize = 15.000
                     Toggle.TextTransparency = 0.300
                     Toggle.TextXAlignment = Enum.TextXAlignment.Left
@@ -1794,7 +1682,7 @@ _G.kick = true
         
                     ToggleCircle.Name = "ToggleCircle"
                     ToggleCircle.Parent = ToggleFrame
-                    ToggleCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ToggleCircle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     ToggleCircle.Position = UDim2.new(0, 0, -0.273000002, 0)
                     ToggleCircle.Selectable = true
                     ToggleCircle.Size = UDim2.new(0, 17, 0, 17)
@@ -1805,7 +1693,7 @@ _G.kick = true
         
                     Confirm.Name = "Confirm"
                     Confirm.Parent = Title
-                    Confirm.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Confirm.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Confirm.ClipsDescendants = true
                     Confirm.Position = UDim2.new(2.3791616, 0, 1.97633278, 0)
                     Confirm.Size = UDim2.new(0, 144, 0, 42)
@@ -1821,19 +1709,19 @@ _G.kick = true
         
                     ConfirmTitle.Name = "ConfirmTitle"
                     ConfirmTitle.Parent = Confirm
-                    ConfirmTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ConfirmTitle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     ConfirmTitle.BackgroundTransparency = 1.000
                     ConfirmTitle.Size = UDim2.new(0, 116, 0, 40)
                     ConfirmTitle.Font = Enum.Font.Gotham
                     ConfirmTitle.Text = "Confirm"
-                    ConfirmTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    ConfirmTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
                     ConfirmTitle.TextSize = 15.000
                     ConfirmTitle.TextTransparency = 0.300
                     ConfirmTitle.TextXAlignment = Enum.TextXAlignment.Left
         
                     BoxColor.Name = "BoxColor"
                     BoxColor.Parent = Title
-                    BoxColor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    BoxColor.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     BoxColor.Position = UDim2.new(3.26915574, 0, 0.261904776, 0)
                     BoxColor.Size = UDim2.new(0, 35, 0, 19)
         
@@ -1843,7 +1731,7 @@ _G.kick = true
         
                     ToggleBtn.Name = "ToggleBtn"
                     ToggleBtn.Parent = Toggle
-                    ToggleBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ToggleBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     ToggleBtn.BackgroundTransparency = 1.000
                     ToggleBtn.Size = UDim2.new(0, 137, 0, 38)
                     ToggleBtn.Font = Enum.Font.SourceSans
@@ -2118,7 +2006,7 @@ _G.kick = true
         
                     Line.Name = "Line"
                     Line.Parent = Container
-                    Line.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Line.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Line.ClipsDescendants = true
                     Line.Position = UDim2.new(0, 0, 0.70091325, 0)
                     Line.Size = UDim2.new(0, 457, 0, 4)
@@ -2149,7 +2037,7 @@ _G.kick = true
                     Label.AutoButtonColor = false
                     Label.Font = Enum.Font.SourceSans
                     Label.Text = ""
-                    Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Label.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Label.TextSize = 14.000
         
                     LabelCorner.CornerRadius = UDim.new(0, 4)
@@ -2194,7 +2082,7 @@ _G.kick = true
         
                     Textbox.Name = "Textbox"
                     Textbox.Parent = Container
-                    Textbox.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Textbox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Textbox.ClipsDescendants = true
                     Textbox.Position = UDim2.new(0.0459499061, 0, 0.734449744, 0)
                     Textbox.Size = UDim2.new(0, 457, 0, 43)
@@ -2210,13 +2098,13 @@ _G.kick = true
         
                     Title.Name = "Title"
                     Title.Parent = Textbox
-                    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Title.BackgroundTransparency = 1.000
                     Title.Position = UDim2.new(0.0822437406, 0, 0, 0)
                     Title.Size = UDim2.new(0, 113, 0, 42)
                     Title.Font = Enum.Font.Gotham
                     Title.Text = text
-                    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Title.TextSize = 15.000
                     Title.TextTransparency = 0.300
                     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -2248,13 +2136,13 @@ _G.kick = true
         
                     Description.Name = "Description"
                     Description.Parent = Title
-                    Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Description.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Description.BackgroundTransparency = 1.000
                     Description.Position = UDim2.new(-0.200942323, 0, 0.985714269, 0)
                     Description.Size = UDim2.new(0, 432, 0, 31)
                     Description.Font = Enum.Font.Gotham
                     Description.Text = desc
-                    Description.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Description.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Description.TextSize = 15.000
                     Description.TextTransparency = 1
                     Description.TextWrapped = true
@@ -2271,12 +2159,12 @@ _G.kick = true
                     TextboxFrameCorner.Parent = TextboxFrame
         
                     TextBox.Parent = TextboxFrame
-                    TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     TextBox.BackgroundTransparency = 1.000
                     TextBox.Size = UDim2.new(0, 161, 0, 26)
                     TextBox.Font = Enum.Font.Gotham
                     TextBox.Text = ""
-                    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
                     TextBox.TextSize = 15.000
                     TextBox.TextTransparency = 0.300
         
@@ -2307,7 +2195,7 @@ _G.kick = true
         
                     Bind.Name = "Bind"
                     Bind.Parent = Container
-                    Bind.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+                    Bind.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Bind.ClipsDescendants = true
                     Bind.Position = UDim2.new(0.40625, 0, 0.828947306, 0)
                     Bind.Size = UDim2.new(0, 457, 0, 43)
@@ -2323,13 +2211,13 @@ _G.kick = true
         
                     Title.Name = "Title"
                     Title.Parent = Bind
-                    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     Title.BackgroundTransparency = 1.000
                     Title.Position = UDim2.new(0.0822437406, 0, 0, 0)
                     Title.Size = UDim2.new(0, 113, 0, 42)
                     Title.Font = Enum.Font.Gotham
                     Title.Text = text
-                    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
                     Title.TextSize = 15.000
                     Title.TextTransparency = 0.300
                     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -2361,13 +2249,13 @@ _G.kick = true
         
                     BindLabel.Name = "BindLabel"
                     BindLabel.Parent = Title
-                    BindLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    BindLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                     BindLabel.BackgroundTransparency = 1.000
                     BindLabel.Position = UDim2.new(2.56011987, 0, 0, 0)
                     BindLabel.Size = UDim2.new(0, 113, 0, 42)
                     BindLabel.Font = Enum.Font.Gotham
                     BindLabel.Text = Key
-                    BindLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    BindLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
                     BindLabel.TextSize = 15.000
                     BindLabel.TextTransparency = 0.300
                     BindLabel.TextXAlignment = Enum.TextXAlignment.Right
@@ -2597,7 +2485,7 @@ game.StarterGui:SetCore("SendNotification", {
           })
           wait()
  
-                local win = Flux:Window("SALUNA (G11)", "MADE BY IRENKISS", Color3.fromRGB(0,166,58), Enum.KeyCode.F2)
+                local win = Flux:Window("Yami", "Y-a-m-i", Color3.fromRGB(0,166,58), Enum.KeyCode.F2)
                 Flux:Notification("ANTI-STAFF AUTOMATICALLY TURNED ON PRESS F2 TO HIDE/SHOW GUI","OK")
         local page2 = win:Tab("FARMING", "http://www.roblox.com/asset/?id=9391995844")
         local page3 = win:Tab("ISLAND/TELEPORT", "http://www.roblox.com/asset/?id=9391995844")
@@ -2655,8 +2543,8 @@ game.StarterGui:SetCore("SendNotification", {
     page9:Line()
         page9:Label("┇ WEAPON SPAM (YORU FOR DEF FARMING) ┇")
     page9:Line()
-    Speeds = 50
-        page9:Slider("Yoru Speed",0,200,50,function(to)
+    Speeds = 200
+        page9:Slider("Yoru Speed",0,200,200,function(to)
             Speeds = to
             end)
             page9:Toggle("Yoru Spam", false, function(yoru)
@@ -3490,7 +3378,7 @@ page9:Toggle("Cannon Farm All Player", false, function(daxccc)
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.9
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 0, 0)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
@@ -3827,8 +3715,8 @@ end)
         
         page1:Button("Hide Name", function()
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.new(255,0,0)
-game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Irenkiss"
-game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
+game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Yami"
+game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "D.Teach"
 end)
         page1:Button("Fake Reset Stats",function()
         local Players = game:GetService("Players") local cache = {} function lol(name) if cache[name] then return cache[name] end local player = Players:FindFirstChild(name) if player then cache[name] = player.UserId return player.UserId end local id pcall(function () id = Players:lol(name) end) cache[name] = id return id end local ehh = game.Players.LocalPlayer.Name local Final = lol(ehh) 
@@ -3836,7 +3724,7 @@ end)
     game.Workspace.UserData["User_"..Final].Data.SniperLevel.Value = 1
     game.Workspace.UserData["User_"..Final].Data.DefenseLevel.Value = 1
     game.Workspace.UserData["User_"..Final].Data.SwordLevel.Value = 1
-    game:GetService("Workspace").UserData["User_"..Final].Data.Cash.Value = 0
+    game:GetService("Workspace").UserData["User_"..Final].Data.Gems.Value = 0
     game:GetService("Workspace").UserData["User_"..Final].Data.Bounty.Value = 0
     game:GetService("Workspace").UserData["User_"..Final].Data.DevilFruit.Value = "None"
     game:GetService("Workspace").UserData["User_"..Final].Data.DevilFruit2.Value = "None"
@@ -3879,7 +3767,7 @@ end)
         page1:Textbox("Fake Haki", "", true, function(Value)
             game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text = "Haki: "..Value
     end)
-                page1:Textbox("Fake Gems", "", true, function(Value)
+                page1:Textbox("Gems", "", true, function(Value)
        game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Gems.GemsAmount.Text = "" ..Value
     end)
             page1:Textbox("Fake Beri", "", true, function(Value)
@@ -5578,12 +5466,12 @@ end)
     
        end
     )
-    hakitarget = 25
-    page2:Slider("Haki Target %",  1, 100,25,function(gmm)
+    hakitarget = 50
+    page2:Slider("Haki Target %",  1, 100,50,function(gmm)
     hakitarget = gmm
     end)
-        hakispeed = 5
-    page2:Slider("Haki Speed",  1, 20,5,function(gttmm)
+        hakispeed = 7
+    page2:Slider("Haki Speed",  1, 20,7,function(gttmm)
     hakispeed = gttmm
     end)
     page2:Toggle("Auto Farm Haki",false, function(vccl)
@@ -6005,9 +5893,9 @@ end
     page4:Label(" ┇ AFFINITIES ┇ ")
         page4:Line()
         
-affpoint = 8
-affty = 1.8
-page4:Slider("Affinities Point", 1, 10, 8,function(treo)
+affpoint = 10
+affty = 2
+page4:Slider("Affinities Point", 1, 10, 10,function(treo)
 affpoint = treo
 if affpoint == 1 then affty = 1.1
 elseif affpoint == 2 then affty = 1.2
@@ -6154,7 +6042,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6166,7 +6054,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6178,7 +6066,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6189,7 +6077,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6201,7 +6089,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6213,7 +6101,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6224,7 +6112,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6235,7 +6123,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6246,7 +6134,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6257,7 +6145,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6268,7 +6156,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6279,7 +6167,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6290,7 +6178,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6301,7 +6189,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6312,7 +6200,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6422,7 +6310,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6434,7 +6322,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6446,7 +6334,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6457,7 +6345,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6469,7 +6357,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6481,7 +6369,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6492,7 +6380,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6503,7 +6391,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6514,7 +6402,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6525,7 +6413,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6536,7 +6424,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6547,7 +6435,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6558,7 +6446,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6569,7 +6457,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
@@ -6580,7 +6468,7 @@ local args = {
     [3] = MELEEAFF,
     [4] = SNIPAFF,
     [5] = SWORDAFF,
-    [6] = "Cash"
+    [6] = "Gems"
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
