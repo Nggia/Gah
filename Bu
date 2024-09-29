@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua')))()
-local Window = OrionLib:MakeWindow({Name = "KAKHUB DUPE", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "hihi", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -7,7 +7,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local LocalPlayer = Players.LocalPlayer
 
 if (require == nil or hookmetamethod == nil or request == nil) then
-    Fluent:Notify({
+    Orion:Notify({
         Title = "immortal.tech beta",
         Content = "Your executor is not supported for this script.",
         Duration = 8
@@ -22,7 +22,7 @@ local GameUtil = require(ReplicatedStorage.Modules.GameUtil)
 local anims = require(LocalPlayer.PlayerScripts.src.Game.Animations)
 
 if (Packets == nil or ItemData == nil or ItemIDS == nil or GameUtil == nil or anims == nil) then
-    Fluent:Notify({
+    Orion:Notify({
         Title = "immortal.tech beta",
         Content = "Your executor is not supported for this script.",
         Duration = 8
@@ -48,7 +48,7 @@ end)
 local Window
 
 if game:GetService("UserInputService").TouchEnabled then
-    Window = Fluent:CreateWindow({
+    Window = Orion:CreateWindow({
         Title = "immortal.tech beta",
         SubTitle = "",
         TabWidth = 160,
@@ -58,7 +58,7 @@ if game:GetService("UserInputService").TouchEnabled then
         MinimizeKey = Enum.KeyCode.RightAlt
     })
 else
-    Window = Fluent:CreateWindow({
+    Window = Orion:CreateWindow({
         Title = "immortal.tech beta",
         SubTitle = "",
         TabWidth = 100,
@@ -1142,7 +1142,7 @@ do
     local autoTeleportGold = Farming:AddToggle("autoTeleportGold", {Title = "Auto Teleport Gold (Nearest Chest)", Default = false })
 
     autoTeleportGold:OnChanged(function()
-        AutoTeleportGoldChestClose = Fluent.Options.autoTeleportGold.Value
+        AutoTeleportGoldChestClose = Orion.Options.autoTeleportGold.Value
     end)
 
     Fluent.Options.autoTeleportGold:SetValue(false)
@@ -1333,7 +1333,7 @@ do
         AutoFillCampfire = Fluent.Options.autoCampfire.Value
     end)
 
-    Fluent.Options.autoCampfire:SetValue(false)
+    Orion.Options.autoCampfire:SetValue(false)
 
     local autoCraft = Farming:AddToggle("autoCraft", {Title = "Auto Craft", Default = false })
 
@@ -1380,7 +1380,7 @@ do
         AutoPickupChestGold = Fluent.Options.autoPickupChestGold.Value
     end)
 
-    Fluent.Options.autoPickupChestGold:SetValue(false)
+    Orion.Options.autoPickupChestGold:SetValue(false)
 
     task.spawn(function()
         while task.wait(.025) do
@@ -1728,8 +1728,8 @@ LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
 
-SaveManager:SetLibrary(Fluent)
-InterfaceManager:SetLibrary(Fluent)
+SaveManager:SetLibrary(Oriom)
+InterfaceManager:SetLibrary(Orion)
 
 SaveManager:IgnoreThemeSettings()
 
@@ -1744,7 +1744,7 @@ SaveManager:BuildConfigSection(Settings)
 
 Window:SelectTab(1)
 
-Fluent:Notify({
+Orion:Notify({
     Title = "immortal.tech beta",
     Content = "The script has been loaded.",
     Duration = 8
