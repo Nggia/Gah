@@ -34,7 +34,7 @@ spawn(function() -- autofarm velocity
 end);
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua"))()
-local Window = OrionLib:MakeWindow({Name = "Mẹ Mày Gay", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "uuuu", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local List = { DevConfig = {} }; 
 List.DevConfig["ListOfBox1"] = {"Common Box"}; 
