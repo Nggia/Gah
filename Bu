@@ -33,7 +33,7 @@ spawn(function() -- autofarm velocity
     end
 end);
 
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rattanakorn2580/stunning-octo-potato/refs/heads/main/OrionByBankZy.lua"))()
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua"))()
 local Window = OrionLib:MakeWindow({Name = "Mẹ Mày Gay", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local List = { DevConfig = {} }; 
