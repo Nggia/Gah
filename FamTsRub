@@ -12,7 +12,7 @@ MainFrame.Parent = ScreenGui
 
 -- Create a hide/show toggle button (outside MainFrame)
 local HideShowToggle = Instance.new("TextButton")
-HideShowToggle.Size = UDim2.new(0, 200, 0, 30)
+HideShowToggle.Size = UDim2.new(0, 100, 0, 70)
 HideShowToggle.Position = UDim2.new(0, 10, 0, 10)
 HideShowToggle.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
 HideShowToggle.Text = "Hide GUI"
