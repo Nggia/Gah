@@ -1,0 +1,124 @@
+-- Create the ScreenGui
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create the main frame
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 200, 0, 200) -- Adjusted to fit three buttons
+MainFrame.Position = UDim2.new(0.5, -100, 0.5, -100)
+MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MainFrame.Visible = true
+MainFrame.Parent = ScreenGui
+
+-- Create a hide/show toggle button (outside MainFrame)
+local HideShowToggle = Instance.new("TextButton")
+HideShowToggle.Size = UDim2.new(0, 200, 0, 30)
+HideShowToggle.Position = UDim2.new(0, 10, 0, 10)
+HideShowToggle.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+HideShowToggle.Text = "Hide GUI"
+HideShowToggle.Parent = ScreenGui
+
+-- Create toggle buttons for the three functions inside MainFrame
+local Function1Toggle = Instance.new("TextButton")
+Function1Toggle.Size = UDim2.new(0, 150, 0, 50)
+Function1Toggle.Position = UDim2.new(0, 25, 0, 20)
+Function1Toggle.BackgroundColor3 = Color3.fromRGB(100, 200, 100)
+Function1Toggle.Text = "Toggle Function 1 (JetPistol)"
+Function1Toggle.Parent = MainFrame
+
+local Function2Toggle = Instance.new("TextButton")
+Function2Toggle.Size = UDim2.new(0, 150, 0, 50)
+Function2Toggle.Position = UDim2.new(0, 25, 0, 80)
+Function2Toggle.BackgroundColor3 = Color3.fromRGB(200, 100, 100)
+Function2Toggle.Text = "Toggle Function 2 (RedHawk)"
+Function2Toggle.Parent = MainFrame
+
+local Function3Toggle = Instance.new("TextButton")  -- New button for GrizzlyMagnum
+Function3Toggle.Size = UDim2.new(0, 150, 0, 50)
+Function3Toggle.Position = UDim2.new(0, 25, 0, 140)
+Function3Toggle.BackgroundColor3 = Color3.fromRGB(150, 100, 200)
+Function3Toggle.Text = "Toggle Function 3 (GrizzlyMagnum)"
+Function3Toggle.Parent = MainFrame
+
+-- Variables to track function states
+local function1Enabled = true
+local function2Enabled = true
+local function3Enabled = true -- New variable for GrizzlyMagnum
+
+-- Toggle Function 1 (JetPistol)
+Function1Toggle.MouseButton1Click:Connect(function()
+    function1Enabled = not function1Enabled
+    Function1Toggle.Text = function1Enabled and "Function 1 (JetPistol) ON" or "Function 1 (JetPistol) OFF"
+end)
+
+-- Toggle Function 2 (RedHawk)
+Function2Toggle.MouseButton1Click:Connect(function()
+    function2Enabled = not function2Enabled
+    Function2Toggle.Text = function2Enabled and "Function 2 (RedHawk) ON" or "Function 2 (RedHawk) OFF"
+end)
+
+-- Toggle Function 3 (GrizzlyMagnum)
+Function3Toggle.MouseButton1Click:Connect(function()
+    function3Enabled = not function3Enabled
+    Function3Toggle.Text = function3Enabled and "Function 3 (GrizzlyMagnum) ON" or "Function 3 (GrizzlyMagnum) OFF"
+end)
+
+-- Show/Hide Main GUI logic
+local guiVisible = true
+HideShowToggle.MouseButton1Click:Connect(function()
+    guiVisible = not guiVisible
+    MainFrame.Visible = guiVisible
+    HideShowToggle.Text = guiVisible and "Hide GUI" or "Show GUI"
+end)
+
+-- Function 1 (JetPistol) Code
+spawn(function()
+    while wait(0.5) do
+        if function1Enabled then
+            local args = {
+                [1] = "TSRubber",
+                [2] = "JetPistol",
+                [3] = {}
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("ReplicatorNoYield"):FireServer(unpack(args))
+        end
+    end
+end)
+
+-- Function 2 (RedHawk) Code
+spawn(function()
+    while wait(2) do
+        if function2Enabled then
+            local args = {
+                [1] = "TSRubber",
+                [2] = "RedHawk",
+                [3] = {}
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("ReplicatorNoYield"):FireServer(unpack(args))
+        end
+    end
+end)
+
+-- Function 3 (GrizzlyMagnum) Code
+spawn(function()
+    while wait(1.5) do
+        if function3Enabled then
+            local args = {
+                [1] = "TSRubber",
+                [2] = "GrizzlyMagnum",
+                [3] = {
+                    ["MouseRay"] = {
+                        ["Normal"] = Vector3.new(4.902571149045798e-08, 1, 1.4303235218449117e-07),
+                        ["Direction"] = Vector3.new(98.72042083740234, -119.72511291503906, -256.749267578125),
+                        ["Origin"] = Vector3.new(-419.5562438964844, 757.7279663085938, 399.4712219238281),
+                        ["Instance"] = workspace.SafeZones.FlowerHill.SecondaryColor,
+                        ["Distance"] = 39.03647994995117,
+                        ["Position"] = Vector3.new(-406.7105712890625, 742.149169921875, 366.0625915527344),
+                        ["Material"] = Enum.Material.Plastic
+                    }
+                }
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("ReplicatorNoYield"):FireServer(unpack(args))
+        end
+    end
+end)
