@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua'))()
 local Window = OrionLib:MakeWindow({Name = "OPlium Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "By Bank Kesee"})
 
 local SafeZoneUnderSea = Instance.new("Part",game.Workspace)
