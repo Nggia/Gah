@@ -1,11 +1,5 @@
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua'))()
-local Window = OrionLib:MakeWindow({Name = "OPlium Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "By Bank Kesee"})
-
-local SafeZoneUnderSea = Instance.new("Part",game.Workspace)
-    SafeZoneUnderSea.Name = "SafeZoneUnderSeaPart"
-    SafeZoneUnderSea.Size = Vector3.new(200,3,200)
-    SafeZoneUnderSea.Position = Vector3.new((math.random(-5000, 5000)), -491, (math.random(-5000, 5000)))
-    SafeZoneUnderSea.Anchored = true
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "InW Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "By Bank Kesee"})
 
 local SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
@@ -41,7 +35,7 @@ local Cache = { DevConfig = {} };
 Cache.DevConfig["ListOfBox1"] = {"Common Box"};
 Cache.DevConfig["ListOfBox2"] = {"Uncommon Box"};
 Cache.DevConfig["ListOfDrink"] = {"Cider+", "Cider", "Lemonade+", "Lemonade", "Juice+", "Juice", "Smoothie+", "Smoothie"};
-Cache.DevConfig["ListOfDrinkFormMixer"] = {"Cider", "Lemonade", "Juice", "Smoothie", "Milk", "Golden Apple"};
+Cache.DevConfig["ListOfSafeZone"] = {"SafeZoneSky", "SafeZoneFarmDF"};
 Cache.DevConfig["ListOfBox3"] = {"Rare Box", "Ultra Rare Box"};
 Cache.DevConfig["ListOfIsland"] = {"Grassy","Kaizu","Snow Mountains","Pursuer Boss","Bar",
 	                           "Cliffs","Windmill", "Cave","Krizma","Sam","Green","Trees",
@@ -49,6 +43,17 @@ Cache.DevConfig["ListOfIsland"] = {"Grassy","Kaizu","Snow Mountains","Pursuer Bo
 	                           "Forest","Evil","Crescent","Islands","Town","Rocky","Palm","Sand",
 	                           "Sand 2","Small","Tiny","Super Tiny","Grass","Atlar"};
 Cache.DevConfig["ListOfMerchant"] = {"Rayleigh", "Better Drink", "Drink", "Flail", "QuestFish", "Krizma", "Sword", "Sniper", "Emote", "Affinity","Fish", "Expertise"};
+
+local TabUp = Window:MakeTab({
+	Name = "Update",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+local Section = TabUp:AddSection({
+	Name = "               MenuFix All | แก้ไขเมนูทั้งหมด |"
+})
 
 local TabAuto = Window:MakeTab({
 	Name = "Autos",
@@ -1553,15 +1558,189 @@ spawn(function()--autofruit
     end
 end)
 
-local TabPlr = Window:MakeTab({
+local TabSk = Window:MakeTab({
+	Name = "Skill Spam",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = TabSk:AddSection({
+	Name = "Skill Charge Max | This Is What Game Dead |"
+})
+
+TabSk:AddToggle({
+	Name = "Skill Charge Max",
+	Default = false,
+	Callback = function(SKM)
+		skillmax = SKM
+	end    
+})
+
+local mta = getrawmetatable(game)
+local namecall = mta.__namecall
+local setreadonly = setreadonly or make_writable
+
+
+setreadonly(mta, false)
+
+mta.__namecall = newcclosure(function(self, ...)
+    local args = {...}
+    local arguments = args
+    local a = {}
+    for i = 1, #arguments - 1 do
+        a[i] = arguments[i]
+    end
+    local method = getnamecallmethod() 
+
+    if method == 'FireServer' or method == "InvokeServer" then
+        if self.Name == 'Drown' and _G.nowaterdamage then
+            if args[1] then
+                return nil
+            end
+        end
+    end
+    
+    return namecall(self, ...)    
+end);
+
+local attackremote = {}    
+
+local a
+a=hookmetamethod(game,"__namecall",function(self,...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" or method == "InvokeServer" then
+        if self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
+            attackremote[self.Name] = args[1]
+            return a(self,unpack(args))
+        elseif self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+            attackremote[self.Name] = ""
+        end
+    end
+      return a(self,...)
+end)
+
+aaxc = hookmetamethod(game, "__namecall", function(self, ...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" or method == "InvokeServer" then
+        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and skillmax then
+            args[6] = 100
+            return aaxc(self, unpack(args))
+        end
+    end
+    return aaxc(self, ...)
+end);
+
+local remotes = {}
+    local azc
+    azc=hookmetamethod(game,"__namecall",function(self,...)
+        local args = {...}
+        local method = getnamecallmethod()
+        if method == "FireServer" or method == "InvokeServer" then
+            if self.Name == "RemoteEvent" and args[3] == "StopCharging" then
+                remotes[self.Name] = args[1]
+                return azc(self,unpack(args))
+            end
+        end
+          return azc(self,...)
+    end)
+
+function serializeTable(val, name, skipnewlines, depth)
+    skipnewlines = skipnewlines or false
+    depth = depth or 0
+ 
+    local tmp = string.rep("", depth)
+ 
+    if name then tmp = tmp end
+ 
+    if type(val) == "table" then
+        tmp = tmp .. (not skipnewlines and "" or "")
+ 
+        for k, v in pairs(val) do
+            tmp =  tmp .. serializeTable(v, k, skipnewlines, depth + 1) .. (not skipnewlines and "" or "")
+        end
+ 
+        tmp = tmp .. string.rep("", depth) 
+    elseif type(val) == "number" then
+        tmp = tmp .. tostring(val)
+    elseif type(val) == "string" then
+        tmp = tmp .. string.format("%q", val)
+    elseif type(val) == "boolean" then
+        tmp = tmp .. (val and "true" or "false")
+    elseif type(val) == "function" then
+        tmp = tmp  .. "func: " .. debug.getinfo(val).name
+    else
+        tmp = tmp .. tostring(val)
+    end
+ 
+    return tmp
+ end
+
+
+local Section = TabSk:AddSection({
+	Name = "Spam Skill DF"
+})
+
+TabSk:AddToggle({
+	Name = "Auto Spam Light",
+	Default = false,
+	Callback = function(ASM)
+		_G.lightfarm = ASM
+	end    
+})
+
+spawn(function() -- Light farm npcs
+    while wait(0) do
+        pcall(function()
+            if _G.lightfarm then
+                script = game:GetService("Players").LocalPlayer.Character.Powers.Light;
+                VTC = script.RemoteEvent.RemoteFunction:InvokeServer();
+                local pla = game.Players.LocalPlayer;
+                local Mouse = pla:GetMouse();
+
+                for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                    if v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health ~= 0 then
+                        if v.Humanoid.Health > 0 and
+                            (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude < 10000000000000000000000 then
+                            if v.Name ~= "SetInstances" then
+                                -- v.Humanoid:ChangeState(11)
+                                v.HumanoidRootPart.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                if v.Humanoid.Health == 0 then
+                                    v:Destroy()
+                                end
+
+                                wait(0.05)
+
+                                local args = {
+                                    [1] = VTC,
+                                    [2] = "LightPower2",
+                                    [3] = "StopCharging",
+                                    [4] = v.Head.CFrame * CFrame.new(0, 0, 0),
+                                    [5] = Mouse.Target,
+                                    [6] = 100
+                                }
+
+                                game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+local TabPlayer = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-
-local Section = TabPlr:AddSection({
-	Name = "Player"
+local Section = TabPlayer:AddSection({
+	Name = "Players"
 })
 
 local Plr = {}
@@ -1570,27 +1749,27 @@ for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(Plr,v.Name)
 end
 
-TabPlr:AddDropdown({
+TabPlayer:AddDropdown({
 	Name = "Select Player",
 	Default = "",
 	Options = Plr,
-	Callback = function(SPR)
-		SelectPlayer = SPR
+	Callback = function(PP)
+		SelectPlayer = PP
 	end    
 })
 
-TabPlr:AddButton({
+TabPlayer:AddButton({
 	Name = "Click to Tp",
 	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[SelectPlayer].Character.HumanoidRootPart.CFrame
-         	end    
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[SelectPlayer].Character.HumanoidRootPart.CFrame
+  	end    
 })
 
-TabPlr:AddToggle({
+TabPlayer:AddToggle({
 	Name = "Behind Player",
 	Default = false,
-	Callback = function(BPR)
-		BehindPlr = BPR
+	Callback = function(BPP)
+		BehindPlr = BPP
 	end    
 })
 
@@ -1604,11 +1783,11 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select
 	end 	
 end);
 
-TabPlr:AddToggle({
-	Name = "Auto Bring Player",
+TabPlayer:AddToggle({
+	Name = "Bring Player",
 	Default = false,
-	Callback = function(ABP)
-		BringPlr = ABP
+	Callback = function(BPR)
+		BringPlr = BPR
 	end    
 })
 
@@ -1620,13 +1799,13 @@ spawn(function()
             end)
         end
     end
-end);
+end)
 
-TabPlr:AddToggle({
+TabPlayer:AddToggle({
 	Name = "Bring Player | All |",
 	Default = false,
-	Callback = function(BPA)
-		BringAll = BPA
+	Callback = function(BAL)
+		BringAll = BAL
 	end    
 })
 
@@ -1645,47 +1824,52 @@ spawn(function() -- bring Plr
             end)
         end
     end
-end);
+end)
 
-local TabLand = Window:MakeTab({
+local TabLD = Window:MakeTab({
 	Name = "Island",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local Section = TabLand:AddSection({
-	Name = "Safe Zone"
+local Section = TabLD:AddSection({
+	Name = "SafeZone"
 })
 
-TabLand:AddButton({
-	Name = "Tp to SafeZone Sky",
+TabLD:AddDropdown({
+	Name = "Choose SafeZone",
+	Default = "",
+	Options = Cache.DevConfig["ListOfSafeZone"],
+	Callback = function(CSF)
+		getgenv().tpsafezone = CSF
+	end    
+})
+	
+TabLD:AddButton({
+	Name = "Click To Tp",
 	Callback = function()
+        if getgenv().tpsafezone == "SafeZoneSky" then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-  	end    
+	 elseif getgenv().tpsafezone == "SafeZoneDF" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneDFPart"].CFrame * CFrame.new(0, 5, 0)
+			end
+			end    
+})
+	
+local Section = TabLD:AddSection({
+	Name = "Teleport to Island"
 })
 
-TabLand:AddButton({
-	Name = "Tp to SafeZone UnderSea",
-	Callback = function()
-        game.Players.LocalPlayer.Character.Humanoid.Sit = true
-        wait(0.15)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneUnderSeaPart"].CFrame * CFrame.new(0, 5, 0)
-  	end    
-})
-local Section = TabLand:AddSection({
-	Name = "Teleport To Island"
-})
-
-TabLand:AddDropdown({
+TabLD:AddDropdown({
 	Name = "Choose Island",
 	Default = "",
 	Options = Cache.DevConfig["ListOfIsland"],
-	Callback = function(LD)
-		getgenv().tpisland = LD
+	Callback = function(GIS)
+		getgenv().tpisland = GIS
 	end    
 })
 
-TabLand:AddButton({
+TabLD:AddButton({
 	Name = "Click To Tp",
 	Callback = function()
         if getgenv().tpisland == "Grassy" then
@@ -1756,6 +1940,90 @@ TabLand:AddButton({
   	end    
 })
 
+local Section = TabLD:AddSection({
+	Name = "For Event | Halloween!! |"
+})
+
+TabLD:AddToggle({
+	Name = "Auto Bring | Zombies |",
+	Default = false,
+	Callback = function(AFZ)
+		FarmZom = AFZ
+	end    
+})
+
+spawn(function()
+    while wait(0) do
+        pcall(function()
+            if FarmZom then
+                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if FarmZom then
+		for _,v in pairs(game.Workspace.WorldEvent.Halloween.Zombies:GetChildren()) do
+                    if string.find(v.Name, "Zombie")
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(15, 15, 15)
+                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                        v.HumanoidRootPart.Transparency = 0.9
+			v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,5)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+            end
+        end)
+    end
+end)
+
+TabLD:AddButton({
+	Name = "Tp To Pumpkin",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.WorldEvent.Halloween.Pumpkin.CFrame
+  	end    
+})
+
+TabLD:AddToggle({
+	Name = "Auto Click Pumpkin",
+	Default = false,
+	Callback = function(ACP)
+		AutoClickP = ACP
+	end    
+})
+
+spawn(function()--autofruit
+    while wait() do
+        pcall(function()
+            if AutoClickP then
+                wait(.5)
+                for i,v in pairs(game.Workspace.WorldEvent.Halloween.Pumpkin:GetChildren()) do
+                    if v:IsA("ClickDetector") then
+                        fireclickdetector(v)
+                    end
+                end
+            end
+        end)
+    end
+end)
+
 local TabNPC = Window:MakeTab({
 	Name = "NPC",
 	Icon = "rbxassetid://4483345998",
@@ -1769,7 +2037,7 @@ local Section = TabNPC:AddSection({
 TabNPC:AddDropdown({
 	Name = "Choose NPC",
 	Default = "",
-	Options = Cache.DevConfig["ListOfDrink"],
+	Options = Cache.DevConfig["ListOfMerchant"],
 	Callback = function(CT)
 		getgenv().tpmerchant = CT
 	end    
@@ -1906,7 +2174,7 @@ spawn(function()
 end);
 
 local Section = TabNPC:AddSection({
-	Name = "Sam Quest"
+	Name = "Dupe | For OPL: Anarchy |"
 })
 
 TabNPC:AddButton({
@@ -1915,6 +2183,10 @@ TabNPC:AddButton({
         workspace.UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A", "\255", 34)
         game:GetService("Players").LocalPlayer.Character.CharacterTrait.ClothingTrigger:FireServer() 
   	end    
+})
+
+local Section = TabNPC:AddSection({
+	Name = "Sam Quest"
 })
 
 TabNPC:AddToggle({
@@ -2004,29 +2276,29 @@ spawn(function()
     end
 end);
 
-local TabMisc = Window:MakeTab({
+local TabMS = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 
-local Section = TabMisc:AddSection({
+local Section = TabMS:AddSection({
 	Name = "Sever"
 })
 
-TabMisc:AddButton({
+TabMS:AddButton({
 	Name = "Rejoin",
 	Callback = function()
         game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId) 
   	end    
 })
 
-local Section = TabMisc:AddSection({
+local Section = TabMS:AddSection({
 	Name = "UnBox"
 })
 
-TabMisc:AddToggle({
+TabMS:AddToggle({
 	Name = "Unbox | Common |",
 	Default = false,
 	Callback = function(AUC)
@@ -2050,8 +2322,8 @@ spawn(function()
     end
 end);
 
-TabMisc:AddToggle({
-	Name = "Unbox | Uncom",
+TabMS:AddToggle({
+	Name = "Unbox | Uncommon |",
 	Default = false,
 	Callback = function(AUN)
 		AutoUnboxU = AUN
@@ -2074,8 +2346,8 @@ spawn(function()
     end
 end);
 
-TabMisc:AddToggle({
-	Name = "Unbox | Rare, Ultra",
+TabMS:AddToggle({
+	Name = "Unbox | Rare, Ultra |",
 	Default = false,
 	Callback = function(AULR)
 		UnboxRL = AULR
@@ -2096,3 +2368,157 @@ spawn(function()
         end)
     end
 end);
+
+local Section = TabMS:AddSection({
+	Name = "Anti"
+})
+
+TabMS:AddToggle({
+	Name = "Anti Stun",
+	Default = false,
+	Callback = function(ATS)
+		_G.autistun = ATS
+	end    
+})
+
+spawn(function()
+while wait() do
+       pcall(function()
+	if _G.antistun then
+       local antistun = game.Players.LocalPlayer.Character
+       repeat
+       antistun["DF_Disabled"].Value = false
+       antistun.HeartStolen.Value = true
+       antistun.Returned.Value = false
+       antistun.Hobbied.Value = false
+       antistun.HMS.Value = false
+       antistun.ChillyPunched.Value = false
+       antistun.CandyTouched.Value = false
+       antistun.Negative.Value = false
+       antistun.OpeSevered.Value = false
+       antistun.SnowTouched.Value = false
+       antistun.RumbleStun.Value = false
+       antistun.GravityCrushed.Value = false
+   
+       wait(0.06)
+       until antistun.Humanoid.Health == 0
+	
+end
+end)
+end 
+end);
+
+TabMS:AddButton({
+	Name = "Anti Lag",
+	Callback = function()
+	if not gethui then
+    warn("Incompatible executor: gethui is unavailable")
+    return
+end
+
+local runService = game:GetService("RunService")
+local lighting = game:GetService("Lighting")
+
+local fpsCounterGui = Instance.new("ScreenGui", gethui())
+local fpsLabel = Instance.new("TextLabel", fpsCounterGui)
+
+fpsCounterGui.Name = "FpsCounterGui"
+fpsCounterGui.IgnoreGuiInset = true
+fpsLabel.Name = "FpsLabel"
+fpsLabel.BackgroundTransparency = 1
+fpsLabel.Position = UDim2.new(1, -100, 0, 0)
+fpsLabel.Size = UDim2.new(0, 100, 0, 30)
+fpsLabel.Text = ""
+fpsLabel.TextSize = 16
+fpsLabel.TextStrokeTransparency = 0.6
+fpsLabel.Draggable = true
+
+local function GetFPS(delay)
+    local startTime = tick()
+    local frames = 0
+    local heartbeatConnection = runService.Heartbeat:Connect(function()
+        frames = frames + 1
+    end)
+    task.wait(delay)
+    heartbeatConnection:Disconnect()
+    local elapsedTime = tick() - startTime
+    local fps = frames / elapsedTime
+    return math.ceil(fps)
+end
+
+task.spawn(function()
+    while true do
+        local fps = GetFPS(0.5)
+        if fps >= 60 then
+            fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+        elseif fps <= 59 and fps > 50 then
+            fpsLabel.TextColor3 = Color3.fromRGB(255, 170, 0)
+        elseif fps <= 49 and fps > 30 then
+            fpsLabel.TextColor3 = Color3.fromRGB(255, 85, 0)
+        elseif fps <= 29 then
+            fpsLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+        fpsLabel.Text = tostring(fps) .. " FPS"
+    end
+end)
+
+lighting.GlobalShadows = false
+lighting.FogEnd = 9e9
+lighting.EnvironmentDiffuseScale = 0.5
+lighting.EnvironmentSpecularScale = 0.5
+
+for _, descendant in ipairs(game:GetDescendants()) do
+    if descendant:IsA("BasePart") then
+        descendant.CastShadow = false
+        descendant.Material = Enum.Material.SmoothPlastic
+        descendant.Reflectance = 0
+        if descendant:IsA("MeshPart") then
+            descendant.CollisionFidelity = Enum.CollisionFidelity.Box
+        end
+    end
+    if descendant:IsA("Decal") or descendant:IsA("Texture") then
+        if descendant.Transparency > 0.25 then
+            descendant.Transparency = 0.25
+        end
+    end
+    if descendant:IsA("ParticleEmitter") or descendant:IsA("Trail") then
+        descendant.Lifetime = NumberRange.new(0)
+    end
+end
+  	end    
+})
+
+local Section = TabMS:AddSection({
+	Name = "Other"
+})
+
+TabMS:AddButton({
+	Name = "Seastone Cetus | 500 Melee |",
+	Callback = function()
+        local A_1 = "Seastone Cestus"
+    local Event = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateMelee
+    Event:FireServer(A_1)
+  	end    
+})
+
+TabMS:AddButton({
+	Name = "Unlock Emote | All |",
+	Callback = function()
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark1.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark2.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark3.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark4.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark5.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark6.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark7.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark8.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark9.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark10.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark11.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark12.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark13.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark14.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark15.Value = true
+    game:GetService("Workspace").UserData["User_" .. game.Players.LocalPlayer.UserId].Data.CB_Mark16.Value = true
+  	end    
+})
