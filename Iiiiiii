@@ -3011,7 +3011,7 @@ page9:Label("┇ FLARE FARM ┇")
 page9:Line()
 page9:Toggle("Flare Farm (Use Ball To Active)", false, function(retref)
  getgenv().autofarmflare = retref
-while getgenv().autofarmflare do wait(0.001)
+while getgenv().autofarmflare do wait(0)
 pcall(function()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
@@ -3023,7 +3023,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-wait(0.001)
+wait(0)
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "FlarePower2",
@@ -6888,7 +6888,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-wait()
+wait(0)
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "MagmaPower1",
@@ -6899,7 +6899,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))       
-wait()
+wait(0)
 end
  end
 end)
@@ -6956,7 +6956,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-wait()
+wait(0)
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "FlarePower2",
@@ -6967,7 +6967,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-wait()
+wait(0)
 end
  end
 end)
