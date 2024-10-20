@@ -1,14 +1,4 @@
-local listed = {
-6112511581, -- NghiaGyGy
-}
-_G.WhiteListed = false
-        for _, v1 in pairs(listed) do
-            if game.Players.LocalPlayer.UserId == v1 then
-_G.WhiteListed = true
-            end
-        end
-if _G.WhiteListed or _G.bypasschothgngukhoi then
-_G.kick = true
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua')))()
 local Window = OrionLib:MakeWindow({Name = "KAKHUB DUPE", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
