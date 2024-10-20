@@ -14,6 +14,8 @@ print("hosgeldiniiiz")
 else
 player:Kick("out of whitelist") 
 end
+
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua')))()
 local Window = OrionLib:MakeWindow({Name = "KAKHUB DUPE", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
