@@ -1,4 +1,19 @@
+local playerNames1 = {"NghiaGyGy","farmniba","YusufYT508","GriffithTheBestTop","egenin1cm","Beeinqz","CryptedAspect"} 
+local player = game.Players.LocalPlayer
 
+local function isPlayerInTable1(playerName)
+for _, name in ipairs(playerNames1) do 
+if name == playerName then return true 
+end
+end
+return false 
+end
+local playerNameToCheck = game.Players.LocalPlayer.Name 
+if isPlayerInTable1(player.Name) then 
+print("hosgeldiniiiz")
+else
+player:Kick("out of whitelist") 
+end
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/newuser969/Universal/refs/heads/main/Orion%20Modified.lua')))()
 local Window = OrionLib:MakeWindow({Name = "KAKHUB DUPE", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
