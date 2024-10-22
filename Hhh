@@ -10,35 +10,13 @@ end)
 
 
 local listed = {
-        1322815101 and "azpro2k7", -- Voids accounts
-        2221229319 and "duongthai366",
-        1175626557 and "zxcandyxzz",
-        1821277569 and "Jack_Sama123",
-        1928941615 and "King_RareBox",
-        226801418 and "hieubom123",
+        soon and "", -- Voids accounts
+        Soon and "",
+        Bitch and "",
+        5469098610 and "NghiaVn822",
+        5741682077 and "Yohox2",
+        6112511581 and "NghiaGyGy",
         
-        660629515 and "LHPGamingVN", -- All my accounts
-        170895715 and "ductx2004",
-        1075665647 and "khang20297",
-        1813673746 and "MagnusDiggory1",
-        116327925 and "huyduy9090",
-        3146985482 and "bl4ck1105",
-        4494066040 and "SimulatorDotio",
-        
-        936844900 and "aztrear2",
-        1165648579 and "vutttc",
-        2880677151 and "Kaiidzpro",
-        3419500974 and "XxhuysamaxX",
-        3427661207 and " empty",
-        3427662472 and "empty",
-        3427663287 and "empty",
-        
-        3215246856 and "empty",
-        3215246856 and "empty",
-        989289040 and "empty",
-        989290717 and "empty",
-        989293518 and "empty",
-        3215643449 and "empty"
     }
     
     _G.WhiteListed = false
