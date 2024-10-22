@@ -31,7 +31,6 @@ _G.WhiteListed = true
     end
     
 if _G.WhiteListed then
-if game.placeId == 8569358381 or game.placeId == 3237168 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("IRENKISS SCRIPT | OPL: ARNACHY", "Serpent", colors)
 local Tab = Window:NewTab("SAM DUPE")
