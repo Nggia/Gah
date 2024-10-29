@@ -7685,7 +7685,7 @@ end)
              or string.find(v.Name, "Cave ") or string.find(v.Name, "Thug") or string.find(v.Name, "Gunslinger") or string.find(v.Name, "Gunner") or string.find(v.Name, "Buster")
               and v:FindFirstChild("HumanoidRootPart") then
                 v:FindFirstChild("HumanoidRootPart").Anchored = true
-                v:FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,Distance1)
+                v:FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(5,5,Distance1)
              end
          end
     end)
