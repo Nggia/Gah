@@ -7456,7 +7456,7 @@ end)
         page7:Line()
         page7:Label(" MOB BRING ")
                 page7:Line()
-        Distance = 0
+        Distance = 5
         page7:Slider("Distance",0,-50,0,function(to)
             Distance1 = to
             end)
