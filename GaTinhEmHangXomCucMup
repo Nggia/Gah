@@ -41,7 +41,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 local listed = {
-, -- NghiaVn822
+6112511581, -- NghiaGyGy
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
