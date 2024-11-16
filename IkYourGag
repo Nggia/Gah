@@ -16,10 +16,6 @@ local TweenService = game:GetService('TweenService')
 local tslaba='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/' 
 
 
-if not httrest then
-    me:Kick("http function not supported")
-    return 
-end
     
 if not guiprotectionfunctionts then 
     me:Kick("missing loader dependancies")
