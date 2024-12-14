@@ -2528,7 +2528,7 @@ game.StarterGui:SetCore("SendNotification", {
     page9:Line()
         page9:Label("┇ WEAPON SPAM (YORU FOR DEF FARMING) ┇")
     page9:Line()
-    Speeds = 50
+    Speeds = 200
         page9:Slider("Yoru Speed",0,200,50,function(to)
             Speeds = to
             end)
