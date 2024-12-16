@@ -3006,7 +3006,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gas.RemoteEvent:FireServer(unpack(args))
 
-wait(0.1)
+wait(0)
 end)
 end
 end)
@@ -3048,7 +3048,7 @@ page9:Label("┇ BOMB FARM ┇")
 page9:Line()
 page9:Toggle("Bomb Farm Skill 1", false, function(retrefff)
  getgenv().autofarmbom = retrefff
-while getgenv().autofarmbom do wait()
+while getgenv().autofarmbom do wait(0)
 pcall(function()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
@@ -3072,13 +3072,13 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 
-wait(0.1)
+wait(0)
 end)
 end
 end)
 page9:Toggle("Bomb Farm Skill 2", false, function(retreffff)
  getgenv().autofarmbom2 = retreffff
-while getgenv().autofarmbom2 do wait()
+while getgenv().autofarmbom2 do wait(0)
 pcall(function()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
@@ -3090,13 +3090,13 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-wait(0.1)
+wait(0)
 end)
 end
 end)
 page9:Toggle("Bomb Farm Skill 4", false, function(retreftff)
  getgenv().autofarmbom3 = retreftff
-while getgenv().autofarmbom3 do wait()
+while getgenv().autofarmbom3 do wait(0)
 pcall(function()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
@@ -3120,13 +3120,13 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 
-wait(0.1)
+wait(0)
 end)
 end
 end)
 page9:Toggle("Bomb Farm Skill 5", false, function(retreffft)
  getgenv().autofarmbom4 = retreffft
-while getgenv().autofarmbom4 do wait()
+while getgenv().autofarmbom4 do wait(0)
 pcall(function()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
@@ -3150,7 +3150,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 
-wait(0.1)
+wait(0)
 end)
 end
 end)
@@ -6878,7 +6878,7 @@ end)
 --------------
          page5:Toggle("Magma Camp",false, function(bo12ol)
             getgenv().pqwek = bo12ol
-while getgenv().pqwek do wait()
+while getgenv().pqwek do wait(0)
 pcall(function()
     for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
         if v.Name == Choose2 then
@@ -7037,7 +7037,7 @@ end)
 --------
          page5:Toggle("Vamp Camp (Skill 5)",false, function(bo12oylvcggqweg)
             getgenv().ghteqweqwzehjt = bo12oylvcggqweg
-while getgenv().ghteqweqwzehjt do wait()
+while getgenv().ghteqweqwzehjt do wait(0)
 pcall(function()
     for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
         if v.Name == Choose2 then
@@ -7062,7 +7062,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
-wait()
+wait(0)
 end
  end
 end)
