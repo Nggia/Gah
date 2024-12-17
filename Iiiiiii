@@ -6980,7 +6980,7 @@ end)
 --------
          page5:Toggle("Bomb Camp (Skill 2)",false, function(bo12oylggqqweg)
             getgenv().ghteqweqwehjrrt = bo12oylggqqweg
-while getgenv().ghteqweqwehjrrt do wait()
+while getgenv().ghteqweqwehjrrt do wait(0)
 pcall(function()
     for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
         if v.Name == Choose2 then
@@ -6994,7 +6994,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-wait()
+wait(0)
 end
  end
 end)
@@ -7003,7 +7003,7 @@ end)
 --------
          page5:Toggle("Bomb Camp (Skill 5)",false, function(bo12oylggqweg)
             getgenv().ghteqweqwehjt = bo12oylggqweg
-while getgenv().ghteqweqwehjt do wait()
+while getgenv().ghteqweqwehjt do wait(0)
 pcall(function()
     for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
         if v.Name == Choose2 then
@@ -7017,7 +7017,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-wait()
+wait(0)
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "BombPower5",
@@ -7028,7 +7028,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-wait()
+wait(0)
 end
  end
 end)
