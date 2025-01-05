@@ -41,6 +41,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 local listed = {
+3451151379, -- Nghiasen_legendary
 6112511581, -- NghiaGyGy
 7668465677, -- NghiaGG88
 5741682077, -- Yohox2
