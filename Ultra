@@ -19,6 +19,8 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "gem" }),
 }
 
+local Section = Tabs.MainTab:AddSection("Player Utilities"
+
     Tabs.Main:AddButton({
         Title = "Save Zone",
         Description = "To the safe zone",
