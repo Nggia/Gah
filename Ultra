@@ -31,6 +31,14 @@ local Tabs = {
         end
     })
 
+players = {}
+
+    for i,v in pairs(game:GetService("Players"):GetChildren()) do
+
+    table.insert(players,v.Name)
+
+    end
+
     local DropdownPlayer = Tabs.Main:AddDropdown("DropdownPlayer", {
         Title = "Select Players",
         Values = players,
