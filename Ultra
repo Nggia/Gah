@@ -47,8 +47,6 @@ local Tabs = {
         DropdownPlayer:SetValue(Options.DropdownPlayer.Value)
     end
 
-
-
     Tabs.Main:AddButton({
         Title = "Refresh Player",
         Description = "Refresh player list",
