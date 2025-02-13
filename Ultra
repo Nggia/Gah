@@ -195,3 +195,35 @@ Tabs.PlayerTab:AddToggle("Toggle", {
         toggleNoclip(enabled)
     end
 })
+
+Tabs.PlayerTab:AddToggle("Toggle", {
+    Title = "AimBot Player (Choose Player)",
+    Description = "",
+    Default = false, 
+    Callback = function(value)
+        aimsilent = value 
+spawn(function()
+    pcall(function()
+        while true do wait()
+            pcall(function()
+                local plr1 = game.Players.LocalPlayer.Character
+                local plr2 = game.Players:FindFirstChild(selectedPlayer)
+                if aimsilent then
+                    cacacac = plr2.Character.HumanoidRootPart.CFrame
+                end
+            end)
+        end
+    end)
+end)
+
+local index = mta.__index
+cf = CFrame.new(1, 2, 3)
+setreadonly(mta, false)
+mta.__index = newcclosure(function(a, b, c)
+    if tostring(b):lower() == 'hit' and aimsilent then
+        return cacacac
+    end
+    return index(a, b, c)
+end)
+    end
+})
