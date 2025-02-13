@@ -207,7 +207,7 @@ spawn(function()
         while true do wait()
             pcall(function()
                 local plr1 = game.Players.LocalPlayer.Character
-                local plr2 = game.Players:FindFirstChild(selectedPlayer)
+                local plr2 = game.Players:FindFirstChild(SelectPlayer)
                 if aimsilent then
                     cacacac = plr2.Character.HumanoidRootPart.CFrame
                 end
@@ -225,5 +225,3 @@ mta.__index = newcclosure(function(a, b, c)
     end
     return index(a, b, c)
 end)
-    end
-})
