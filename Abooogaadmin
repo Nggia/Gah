@@ -7,7 +7,7 @@ local AutoHealEnabled = false  -- Toggle state
 local Tab = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
 Tab:AddToggle({
-    Name = "Enable Auto Heal",
+    Name = "Auto Heal Berry",
     Default = false,
     Callback = function(Value)
         AutoHealEnabled = Value
