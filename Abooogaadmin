@@ -1,16 +1,27 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/jensonhirst/Orion/main/source"))()
-local Window = OrionLib:MakeWindow({Name = "Auto Heal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionUI"})
+local Window = OrionLib:MakeWindow({Name = "Auto Heal & Attack", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionUI"})
 
-local AutoHealEnabled = false  -- Toggle state
+local AutoHealEnabled = false  -- Toggle state for auto heal
+local AutoAttackEnabled = false  -- Toggle state for auto attack
 
--- Create a toggle button
+-- Create a main tab
 local Tab = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
+-- Auto Heal Toggle
 Tab:AddToggle({
-    Name = "Auto Heal Berry",
+    Name = "Enable Auto Heal",
     Default = false,
     Callback = function(Value)
         AutoHealEnabled = Value
+    end
+})
+
+-- Auto Attack Toggle
+Tab:AddToggle({
+    Name = "Enable Auto Attack",
+    Default = false,
+    Callback = function(Value)
+        AutoAttackEnabled = Value
     end
 })
 
@@ -23,6 +34,46 @@ task.spawn(function()
 
             if humanoid and humanoid.Health < 100 then
                 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("NiceExploits"):FireServer("Berry")
+            end
+        end
+    end
+end)
+
+-- Auto Attack Function
+task.spawn(function()
+    local p = game:GetService("Players")
+    local q = game:GetService("Workspace")
+    local o = game:GetService("ReplicatedStorage")
+
+    function getNear()
+        local R
+        local S = 30  -- Max distance
+        for _, c in pairs(p:GetPlayers()) do
+            if c ~= p.LocalPlayer and c.Character and c.Character:FindFirstChild("HumanoidRootPart") then
+                local distance = (p.LocalPlayer.Character.HumanoidRootPart.Position - c.Character.HumanoidRootPart.Position).Magnitude
+                if distance < S then
+                    R = c.Character.HumanoidRootPart
+                    S = distance
+                end
+            end
+        end
+        return R
+    end
+
+    while task.wait(0) do
+        if AutoAttackEnabled then
+            local U = getNear()
+            if U and U.Parent then
+                local ac = {}
+                for _, c in pairs(U.Parent:GetChildren()) do
+                    if c:IsA("BasePart") then
+                        table.insert(ac, c)
+                    end
+                end
+                game:GetService("ReplicatedStorage").Events.SwingTool:FireServer(
+                    o.RelativeTime.Value,
+                    ac
+                )
             end
         end
     end
