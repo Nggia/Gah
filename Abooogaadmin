@@ -1,0 +1,31 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+local Window = OrionLib:MakeWindow({Name = "Auto Heal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionUI"})
+
+local AutoHealEnabled = false  -- Toggle state
+
+-- Create a toggle button
+local Tab = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+
+Tab:AddToggle({
+    Name = "Enable Auto Heal",
+    Default = false,
+    Callback = function(Value)
+        AutoHealEnabled = Value
+    end
+})
+
+-- Auto Heal Function
+task.spawn(function()
+    while task.wait(0) do
+        if AutoHealEnabled then
+            local player = game.Players.LocalPlayer
+            local humanoid = player.Character and player.Character:FindFirstChild("Humanoid")
+
+            if humanoid and humanoid.Health < 100 then
+                game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("NiceExploits"):FireServer("Berry")
+            end
+        end
+    end
+end)
+
+OrionLib:Init()
