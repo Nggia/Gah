@@ -1,0 +1,6 @@
+if game.PlaceId == 8569358381 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nggia/Gah/refs/heads/main/Maiiin.lua"))()
+else
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nggia/Gah/refs/heads/main/Maiiin.lua"))()
+
+end
