@@ -111,6 +111,8 @@ _G.kick = true
     SafeZoneOuterSpace.Anchored = true
             --Properties:
 
+	local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/fluxlib.txt")() -- Self 
+
 local mta = getrawmetatable(game)
 local namecall = mta.__namecall
 local setreadonly = setreadonly or make_writable
