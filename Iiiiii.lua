@@ -55,6 +55,9 @@ _G.WhiteListed = true
         end
 if _G.WhiteListed or _G.bypasschothgngukhoi then
 _G.kick = true
+
+local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/fluxlib.txt")()
+	
   if game.placeId == 8569358381 or game.placeId == 3237168 then
     local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -109,9 +112,6 @@ _G.kick = true
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
     SafeZoneOuterSpace.Anchored = true
-            --Properties:
-
-	local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/Nggia/Gah/refs/heads/main/Hihi")() -- Self 
 
 local mta = getrawmetatable(game)
 local namecall = mta.__namecall
