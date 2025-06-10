@@ -1,0 +1,349 @@
+-- Roblox Script UI with Sidebar Navigation
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "ScriptUI"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.ResetOnSpawn = false
+
+-- Main Frame
+local mainFrame = Instance.new("Frame")
+mainFrame.Name = "MainFrame"
+mainFrame.Size = UDim2.new(0, 800, 0, 600)
+mainFrame.Position = UDim2.new(0.5, -400, 0.5, -300)
+mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 35)
+mainFrame.BorderSizePixel = 0
+mainFrame.Parent = screenGui
+
+-- Add corner radius to main frame
+local mainCorner = Instance.new("UICorner")
+mainCorner.CornerRadius = UDim.new(0, 12)
+mainCorner.Parent = mainFrame
+
+-- Add drop shadow effect
+local shadow = Instance.new("Frame")
+shadow.Name = "Shadow"
+shadow.Size = UDim2.new(1, 6, 1, 6)
+shadow.Position = UDim2.new(0, -3, 0, -3)
+shadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+shadow.BackgroundTransparency = 0.8
+shadow.BorderSizePixel = 0
+shadow.ZIndex = mainFrame.ZIndex - 1
+shadow.Parent = mainFrame
+
+local shadowCorner = Instance.new("UICorner")
+shadowCorner.CornerRadius = UDim.new(0, 15)
+shadowCorner.Parent = shadow
+
+-- Title Bar
+local titleBar = Instance.new("Frame")
+titleBar.Name = "TitleBar"
+titleBar.Size = UDim2.new(1, 0, 0, 40)
+titleBar.Position = UDim2.new(0, 0, 0, 0)
+titleBar.BackgroundColor3 = Color3.fromRGB(40, 40, 45)
+titleBar.BorderSizePixel = 0
+titleBar.Parent = mainFrame
+
+local titleCorner = Instance.new("UICorner")
+titleCorner.CornerRadius = UDim.new(0, 12)
+titleCorner.Parent = titleBar
+
+-- Title Text
+local titleText = Instance.new("TextLabel")
+titleText.Name = "TitleText"
+titleText.Size = UDim2.new(1, -100, 1, 0)
+titleText.Position = UDim2.new(0, 15, 0, 0)
+titleText.BackgroundTransparency = 1
+titleText.Text = "Script UI v1.0"
+titleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleText.TextScaled = true
+titleText.Font = Enum.Font.GothamBold
+titleText.TextXAlignment = Enum.TextXAlignment.Left
+titleText.Parent = titleBar
+
+-- Close Button
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Size = UDim2.new(0, 30, 0, 30)
+closeButton.Position = UDim2.new(1, -40, 0, 5)
+closeButton.BackgroundColor3 = Color3.fromRGB(255, 60, 60)
+closeButton.BorderSizePixel = 0
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.TextScaled = true
+closeButton.Font = Enum.Font.GothamBold
+closeButton.Parent = titleBar
+
+local closeCorner = Instance.new("UICorner")
+closeCorner.CornerRadius = UDim.new(0, 6)
+closeCorner.Parent = closeButton
+
+-- Left Sidebar
+local sidebar = Instance.new("Frame")
+sidebar.Name = "Sidebar"
+sidebar.Size = UDim2.new(0, 200, 1, -40)
+sidebar.Position = UDim2.new(0, 0, 0, 40)
+sidebar.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
+sidebar.BorderSizePixel = 0
+sidebar.Parent = mainFrame
+
+-- Right Content Area
+local contentArea = Instance.new("Frame")
+contentArea.Name = "ContentArea"
+contentArea.Size = UDim2.new(1, -200, 1, -40)
+contentArea.Position = UDim2.new(0, 200, 0, 40)
+contentArea.BackgroundColor3 = Color3.fromRGB(35, 35, 40)
+contentArea.BorderSizePixel = 0
+contentArea.Parent = mainFrame
+
+-- Sidebar Navigation Buttons
+local navButtons = {}
+local pages = {"Home", "Settings", "Scripts", "Tools", "About"}
+
+for i, pageName in ipairs(pages) do
+    local navButton = Instance.new("TextButton")
+    navButton.Name = pageName .. "Button"
+    navButton.Size = UDim2.new(1, -20, 0, 40)
+    navButton.Position = UDim2.new(0, 10, 0, 10 + (i-1) * 50)
+    navButton.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+    navButton.BorderSizePixel = 0
+    navButton.Text = pageName
+    navButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+    navButton.TextScaled = true
+    navButton.Font = Enum.Font.Gotham
+    navButton.Parent = sidebar
+    
+    local navCorner = Instance.new("UICorner")
+    navCorner.CornerRadius = UDim.new(0, 8)
+    navCorner.Parent = navButton
+    
+    navButtons[pageName] = navButton
+end
+
+-- Create Pages
+local pages = {}
+
+-- Home Page
+local homePage = Instance.new("Frame")
+homePage.Name = "HomePage"
+homePage.Size = UDim2.new(1, -20, 1, -20)
+homePage.Position = UDim2.new(0, 10, 0, 10)
+homePage.BackgroundTransparency = 1
+homePage.Parent = contentArea
+
+-- Home Page Content
+local homeTitle = Instance.new("TextLabel")
+homeTitle.Name = "HomeTitle"
+homeTitle.Size = UDim2.new(1, 0, 0, 50)
+homeTitle.Position = UDim2.new(0, 0, 0, 0)
+homeTitle.BackgroundTransparency = 1
+homeTitle.Text = "Welcome to Script UI"
+homeTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+homeTitle.TextScaled = true
+homeTitle.Font = Enum.Font.GothamBold
+homeTitle.TextXAlignment = Enum.TextXAlignment.Left
+homeTitle.Parent = homePage
+
+-- Sample TextBox
+local textBox = Instance.new("TextBox")
+textBox.Name = "SampleTextBox"
+textBox.Size = UDim2.new(0.8, 0, 0, 35)
+textBox.Position = UDim2.new(0, 0, 0, 70)
+textBox.BackgroundColor3 = Color3.fromRGB(50, 50, 55)
+textBox.BorderSizePixel = 0
+textBox.Text = "Enter text here..."
+textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+textBox.TextScaled = true
+textBox.Font = Enum.Font.Gotham
+textBox.PlaceholderText = "Type something..."
+textBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
+textBox.Parent = homePage
+
+local textBoxCorner = Instance.new("UICorner")
+textBoxCorner.CornerRadius = UDim.new(0, 6)
+textBoxCorner.Parent = textBox
+
+-- Sample Button
+local sampleButton = Instance.new("TextButton")
+sampleButton.Name = "SampleButton"
+sampleButton.Size = UDim2.new(0, 150, 0, 35)
+sampleButton.Position = UDim2.new(0, 0, 0, 120)
+sampleButton.BackgroundColor3 = Color3.fromRGB(70, 130, 255)
+sampleButton.BorderSizePixel = 0
+sampleButton.Text = "Click Me"
+sampleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+sampleButton.TextScaled = true
+sampleButton.Font = Enum.Font.GothamBold
+sampleButton.Parent = homePage
+
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(0, 6)
+buttonCorner.Parent = sampleButton
+
+-- Toggle Button
+local toggleButton = Instance.new("TextButton")
+toggleButton.Name = "ToggleButton"
+toggleButton.Size = UDim2.new(0, 60, 0, 30)
+toggleButton.Position = UDim2.new(0, 200, 0, 125)
+toggleButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+toggleButton.BorderSizePixel = 0
+toggleButton.Text = "OFF"
+toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleButton.TextScaled = true
+toggleButton.Font = Enum.Font.GothamBold
+toggleButton.Parent = homePage
+
+local toggleCorner = Instance.new("UICorner")
+toggleCorner.CornerRadius = UDim.new(0, 15)
+toggleCorner.Parent = toggleButton
+
+-- Dropdown Menu
+local dropdownFrame = Instance.new("Frame")
+dropdownFrame.Name = "DropdownFrame"
+dropdownFrame.Size = UDim2.new(0, 200, 0, 35)
+dropdownFrame.Position = UDim2.new(0, 300, 0, 120)
+dropdownFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 55)
+dropdownFrame.BorderSizePixel = 0
+dropdownFrame.Parent = homePage
+
+local dropdownCorner = Instance.new("UICorner")
+dropdownCorner.CornerRadius = UDim.new(0, 6)
+dropdownCorner.Parent = dropdownFrame
+
+local dropdownButton = Instance.new("TextButton")
+dropdownButton.Name = "DropdownButton"
+dropdownButton.Size = UDim2.new(1, 0, 1, 0)
+dropdownButton.Position = UDim2.new(0, 0, 0, 0)
+dropdownButton.BackgroundTransparency = 1
+dropdownButton.Text = "Select Option ▼"
+dropdownButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+dropdownButton.TextScaled = true
+dropdownButton.Font = Enum.Font.Gotham
+dropdownButton.Parent = dropdownFrame
+
+-- Settings Page
+local settingsPage = Instance.new("Frame")
+settingsPage.Name = "SettingsPage"
+settingsPage.Size = UDim2.new(1, -20, 1, -20)
+settingsPage.Position = UDim2.new(0, 10, 0, 10)
+settingsPage.BackgroundTransparency = 1
+settingsPage.Visible = false
+settingsPage.Parent = contentArea
+
+local settingsTitle = Instance.new("TextLabel")
+settingsTitle.Name = "SettingsTitle"
+settingsTitle.Size = UDim2.new(1, 0, 0, 50)
+settingsTitle.Position = UDim2.new(0, 0, 0, 0)
+settingsTitle.BackgroundTransparency = 1
+settingsTitle.Text = "Settings"
+settingsTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+settingsTitle.TextScaled = true
+settingsTitle.Font = Enum.Font.GothamBold
+settingsTitle.TextXAlignment = Enum.TextXAlignment.Left
+settingsTitle.Parent = settingsPage
+
+-- Store pages
+pages["Home"] = homePage
+pages["Settings"] = settingsPage
+
+-- Navigation Logic
+local currentPage = "Home"
+
+local function switchPage(pageName)
+    for name, page in pairs(pages) do
+        if name == pageName then
+            page.Visible = true
+            navButtons[name].BackgroundColor3 = Color3.fromRGB(70, 130, 255)
+            navButtons[name].TextColor3 = Color3.fromRGB(255, 255, 255)
+        else
+            page.Visible = false
+            navButtons[name].BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+            navButtons[name].TextColor3 = Color3.fromRGB(200, 200, 200)
+        end
+    end
+    currentPage = pageName
+end
+
+-- Connect navigation buttons
+for pageName, button in pairs(navButtons) do
+    button.MouseButton1Click:Connect(function()
+        switchPage(pageName)
+    end)
+end
+
+-- Toggle functionality
+local toggleState = false
+toggleButton.MouseButton1Click:Connect(function()
+    toggleState = not toggleState
+    if toggleState then
+        toggleButton.BackgroundColor3 = Color3.fromRGB(50, 200, 50)
+        toggleButton.Text = "ON"
+    else
+        toggleButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+        toggleButton.Text = "OFF"
+    end
+end)
+
+-- Sample button functionality
+sampleButton.MouseButton1Click:Connect(function()
+    print("Button clicked! TextBox content: " .. textBox.Text)
+end)
+
+-- Close button functionality
+closeButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
+
+-- Dropdown functionality (basic example)
+local dropdownOptions = {"Option 1", "Option 2", "Option 3"}
+local dropdownOpen = false
+
+dropdownButton.MouseButton1Click:Connect(function()
+    if not dropdownOpen then
+        dropdownOpen = true
+        dropdownButton.Text = "Close ▲"
+        -- In a full implementation, you'd create option buttons here
+        print("Dropdown opened")
+    else
+        dropdownOpen = false
+        dropdownButton.Text = "Select Option ▼"
+        print("Dropdown closed")
+    end
+end)
+
+-- Make the UI draggable
+local dragToggle = nil
+local dragSpeed = 0.25
+local dragStart = nil
+local startPos = nil
+
+local function updateInput(input)
+    local delta = input.Position - dragStart
+    local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    game:GetService("TweenService"):Create(mainFrame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+titleBar.InputBegan:Connect(function(input)
+    if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+        dragToggle = true
+        dragStart = input.Position
+        startPos = mainFrame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragToggle = false
+            end
+        end)
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        if dragToggle then
+            updateInput(input)
+        end
+    end
+end)
+
+-- Initialize with Home page
+switchPage("Home")
+
+print("Script UI loaded successfully!")
