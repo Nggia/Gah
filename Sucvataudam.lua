@@ -1,13 +1,3 @@
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-
---Properties:
-
-
-
-repeat wait() until game:IsLoaded() 
-repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
 do  local ui =  game:GetService("CoreGui"):FindFirstChild("redui")  if ui then ui:Destroy() end end
 
 local UserInputService = game:GetService("UserInputService")
