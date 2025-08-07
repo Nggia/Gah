@@ -144,7 +144,8 @@ function RedUI:CreateWindow(config)
         BackgroundColor3 = COLORS.Secondary,
         BorderSizePixel = 0
     })
-    titleBar:AddChild(CreateCorner(8))
+    local titleBarCorner = CreateCorner(8)
+    titleBarCorner.Parent = titleBar
     
     local titleLabel = CreateInstance("TextLabel", {
         Name = "Title",
@@ -172,7 +173,8 @@ function RedUI:CreateWindow(config)
         TextSize = 20,
         Font = Enum.Font.GothamBold
     })
-    closeButton:AddChild(CreateCorner(15))
+    local closeButtonCorner = CreateCorner(15)
+    closeButtonCorner.Parent = closeButton
     
     -- Minimize button
     local minimizeButton = CreateInstance("TextButton", {
@@ -187,7 +189,8 @@ function RedUI:CreateWindow(config)
         TextSize = 16,
         Font = Enum.Font.GothamBold
     })
-    minimizeButton:AddChild(CreateCorner(15))
+    local minimizeButtonCorner = CreateCorner(15)
+    minimizeButtonCorner.Parent = minimizeButton
     
     -- Content area
     local contentArea = CreateInstance("Frame", {
