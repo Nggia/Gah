@@ -917,9 +917,12 @@ function RedUI:CreateWindow(config)
                     Visible = false,
                     ZIndex = 10
                 })
-                dropdownList:AddChild(CreateCorner(6))
-                dropdownList:AddChild(CreateStroke(COLORS.Primary, 1, 0.5))
-                
+                local dropdownListCorner = CreateCorner(6)
+                dropdownListCorner.Parent = dropdownList
+
+                local dropdownListStroke = CreateStroke(COLORS.Primary, 1, 0.5)
+                dropdownListStroke.Parent = dropdownList
+
                 local listLayout = CreateInstance("UIListLayout", {
                     Parent = dropdownList,
                     SortOrder = Enum.SortOrder.LayoutOrder
@@ -1143,9 +1146,12 @@ function RedUI:CreateWindow(config)
                     TextSize = 12,
                     Font = Enum.Font.GothamSemibold
                 })
-                keybindButton:AddChild(CreateCorner(4))
-                keybindButton:AddChild(CreateStroke(COLORS.Outline, 1, 0.7))
-                
+                local keybindCorner = CreateCorner(4)
+                keybindCorner.Parent = keybindButton
+
+                local keybindStroke = CreateStroke(COLORS.Outline, 1, 0.7)
+                keybindStroke.Parent = keybindButton
+
                 local keybind = {
                     Key = defaultKey,
                     Callback = callback,
@@ -1237,9 +1243,12 @@ function RedUI:CreateWindow(config)
             BackgroundColor3 = COLORS.Secondary,
             BorderSizePixel = 0
         })
-        notificationFrame:AddChild(CreateCorner(8))
-        notificationFrame:AddChild(CreateStroke(notificationColors[type], 2, 0.3))
-        
+        local notifCorner = CreateCorner(8)
+        notifCorner.Parent = notificationFrame
+
+        local notifStroke = CreateStroke(notificationColors[type], 2, 0.3)
+        notifStroke.Parent = notificationFrame
+
         local titleLabel = CreateInstance("TextLabel", {
             Name = "Title",
             Parent = notificationFrame,
