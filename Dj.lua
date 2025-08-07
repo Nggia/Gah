@@ -358,7 +358,7 @@ function ObsidianRedFusion:Create(opts)
         return pageObj.api
     end
 
-    return setmetatable({}, { __index = self })
+    return self
 end
 
 return setmetatable({}, {__index = ObsidianRedFusion})
