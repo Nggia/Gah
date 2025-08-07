@@ -389,9 +389,13 @@ function RedUI:CreateWindow(config)
                 BorderSizePixel = 0,
                 AutomaticSize = Enum.AutomaticSize.Y
             })
-            sectionFrame:AddChild(CreateCorner(6))
-            sectionFrame:AddChild(CreateStroke(COLORS.Outline, 1, 0.5))
-            
+           local sectionCorner = CreateCorner(6)
+           sectionCorner.Parent = sectionFrame
+
+-- sectionFrame:AddChild(CreateStroke(COLORS.Outline, 1, 0.5))
+           local sectionStroke = CreateStroke(COLORS.Outline, 1, 0.5)
+           sectionStroke.Parent = sectionFrame
+
             local sectionHeader = CreateInstance("TextLabel", {
                 Name = "Header",
                 Parent = sectionFrame,
@@ -404,8 +408,9 @@ function RedUI:CreateWindow(config)
                 TextXAlignment = Enum.TextXAlignment.Left,
                 Font = Enum.Font.GothamSemibold
             })
-            sectionHeader:AddChild(CreateCorner(6))
-            
+            local headerCorner = CreateCorner(6)
+            headerCorner.Parent = sectionHeader
+
             local headerPadding = CreateInstance("UIPadding", {
                 Parent = sectionHeader,
                 PaddingLeft = UDim.new(0, 15)
