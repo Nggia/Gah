@@ -127,9 +127,12 @@ function RedUI:CreateWindow(config)
         BorderSizePixel = 0
     })
     
-    mainFrame:AddChild(CreateCorner(8))
-    mainFrame:AddChild(CreateStroke(COLORS.Primary, 2, 0.3))
-    
+    local corner = CreateCorner(8)
+    corner.Parent = mainFrame
+
+    local stroke = CreateStroke(COLORS.Primary, 2, 0.3)
+    stroke.Parent = mainFrame
+
     -- Animate window opening
     TweenObject(mainFrame, {Size = windowSize}, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out))
     
