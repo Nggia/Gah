@@ -1,15 +1,12 @@
 -- ObsidianRedFusion.lua
--- Modular UI Library: ObsidianRedFusion (Obsidian visual style, Shittibitch system)
+-- Modern UI with Shittibitch-like page/widget API and proper stacking/layout
 
 local ObsidianRedFusion = {}
 ObsidianRedFusion.__index = ObsidianRedFusion
 
--- Create a new window
-function ObsidianRedFusion:CreateWindow(options)
+function ObsidianRedFusion:Create(options)
     local CoreGui = game:GetService("CoreGui")
     local UserInputService = game:GetService("UserInputService")
-
-    -- Remove any previous UI
     local old = CoreGui:FindFirstChild("ObsidianRedUI")
     if old then old:Destroy() end
 
@@ -18,19 +15,16 @@ function ObsidianRedFusion:CreateWindow(options)
     gui.Parent = CoreGui
     gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-    -- Main window
     local Window = Instance.new("Frame")
     Window.Name = "MainWindow"
-    Window.Size = UDim2.new(0, 420, 0, 320)
-    Window.Position = UDim2.new(0.5, -210, 0.5, -160)
+    Window.Size = UDim2.new(0, 430, 0, 350)
+    Window.Position = UDim2.new(0.5, -215, 0.5, -175)
     Window.BackgroundColor3 = Color3.fromRGB(15,15,15)
     Window.BorderSizePixel = 0
     Window.Parent = gui
-
     local UICorner = Instance.new("UICorner", Window)
     UICorner.CornerRadius = UDim.new(0, 7)
 
-    -- Accent bar
     local Accent = Instance.new("Frame", Window)
     Accent.Size = UDim2.new(1, 0, 0, 4)
     Accent.BackgroundColor3 = Color3.fromRGB(125,85,255)
@@ -38,16 +32,16 @@ function ObsidianRedFusion:CreateWindow(options)
     local AccentUICorner = Instance.new("UICorner", Accent)
     AccentUICorner.CornerRadius = UDim.new(0, 2)
 
-    -- Title label
     local Title = Instance.new("TextLabel", Window)
     Title.Size = UDim2.new(1, 0, 0, 34)
+    Title.Position = UDim2.new(0,0,0,4)
     Title.BackgroundTransparency = 1
-    Title.Text = options.Title or "Obsidian Red Fusion"
+    Title.Text = options and options.Title or "Obsidian Red Fusion"
     Title.TextColor3 = Color3.fromRGB(255,255,255)
     Title.TextSize = 20
     Title.Font = Enum.Font.Code
 
-    -- Draggable system
+    -- Draggable
     local dragging, dragStart, startPos
     Title.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -72,7 +66,7 @@ function ObsidianRedFusion:CreateWindow(options)
     local TabBar = Instance.new("Frame", Window)
     TabBar.Name = "TabBar"
     TabBar.Position = UDim2.new(0, 0, 0, 38)
-    TabBar.Size = UDim2.new(1, 0, 0, 34)
+    TabBar.Size = UDim2.new(1, 0, 0, 38)
     TabBar.BackgroundColor3 = Color3.fromRGB(25,25,25)
     TabBar.BorderSizePixel = 0
     local TabBarCorner = Instance.new("UICorner", TabBar)
@@ -81,76 +75,36 @@ function ObsidianRedFusion:CreateWindow(options)
     local TabList = Instance.new("UIListLayout", TabBar)
     TabList.FillDirection = Enum.FillDirection.Horizontal
     TabList.SortOrder = Enum.SortOrder.LayoutOrder
-    TabList.Padding = UDim.new(0, 6)
+    TabList.Padding = UDim.new(0, 8)
 
-    -- Tab pages container
+    -- Page container
     local PageContainer = Instance.new("Frame", Window)
-    PageContainer.Position = UDim2.new(0, 0, 0, 72)
-    PageContainer.Size = UDim2.new(1, 0, 1, -72)
+    PageContainer.Position = UDim2.new(0, 0, 0, 76)
+    PageContainer.Size = UDim2.new(1, 0, 1, -76)
     PageContainer.BackgroundTransparency = 1
 
-    local Tabs = {}
-    local tabApiList = {}
+    local pages = {}
+    local tabs = {}
 
-    local function AddTab(tabName)
-        local Tab = Instance.new("TextButton")
-        Tab.Size = UDim2.new(0, 110, 1, 0)
-        Tab.BackgroundTransparency = 1
-        Tab.Text = tabName
-        Tab.TextColor3 = Color3.fromRGB(200, 200, 200)
-        Tab.TextSize = 16
-        Tab.Font = Enum.Font.Code
-        Tab.Parent = TabBar
+    -- API for each page/tab
+    local function MakePage(Content)
+        local pageApi = {}
 
-        local Page = Instance.new("Frame")
-        Page.Size = UDim2.new(1, 0, 1, 0)
-        Page.BackgroundTransparency = 1
-        Page.Visible = false
-        Page.Parent = PageContainer
-
-        local Content = Instance.new("Frame")
-        Content.Name = "Content"
-        Content.BackgroundTransparency = 1
-        Content.Size = UDim2.new(1, -24, 1, -20)
-        Content.Position = UDim2.new(0, 12, 0, 10)
-        Content.Parent = Page
-
-        local layout = Instance.new("UIListLayout")
-        layout.Parent = Content
-        layout.Padding = UDim.new(0, 10)
-        layout.SortOrder = Enum.SortOrder.LayoutOrder
-
-        Tab.MouseButton1Click:Connect(function()
-            for _, t in pairs(Tabs) do
-                t.Page.Visible = false
-                t.Tab.TextColor3 = Color3.fromRGB(200, 200, 200)
-            end
-            Page.Visible = true
-            Tab.TextColor3 = Color3.fromRGB(125,85,255)
-        end)
-
-        table.insert(Tabs, {Tab = Tab, Page = Page, Content = Content})
-        if #Tabs == 1 then
-            Tab:Fire("MouseButton1Click")
-        end
-
-        -- API for this tab
-        local tabApi = {}
-
-        function tabApi:AddToggle(label, state, callback)
+        function pageApi:Toggle(label, state, callback)
             local frame = Instance.new("Frame")
-            frame.Size = UDim2.new(1, -24, 0, 34)
+            frame.Size = UDim2.new(1, 0, 0, 34)
             frame.BackgroundTransparency = 1
             frame.Parent = Content
 
             local text = Instance.new("TextLabel", frame)
             text.Position = UDim2.new(0, 0, 0, 0)
-            text.Size = UDim2.new(0, 140, 1, 0)
+            text.Size = UDim2.new(0, 160, 1, 0)
             text.BackgroundTransparency = 1
             text.Text = label
             text.TextColor3 = Color3.fromRGB(220,220,220)
             text.Font = Enum.Font.Code
             text.TextSize = 15
+            text.TextXAlignment = Enum.TextXAlignment.Left
 
             local toggle = Instance.new("TextButton", frame)
             toggle.Position = UDim2.new(1, -56, 0.5, -15)
@@ -177,9 +131,9 @@ function ObsidianRedFusion:CreateWindow(options)
             end)
         end
 
-        function tabApi:AddButton(label, callback)
+        function pageApi:Button(label, callback)
             local button = Instance.new("TextButton")
-            button.Size = UDim2.new(1, -24, 0, 34)
+            button.Size = UDim2.new(1, 0, 0, 34)
             button.BackgroundColor3 = Color3.fromRGB(36,36,36)
             button.Text = label
             button.TextColor3 = Color3.fromRGB(255,255,255)
@@ -193,9 +147,9 @@ function ObsidianRedFusion:CreateWindow(options)
             button.MouseButton1Click:Connect(callback)
         end
 
-        function tabApi:AddLabel(label)
+        function pageApi:Label(label)
             local lbl = Instance.new("TextLabel")
-            lbl.Size = UDim2.new(1, -24, 0, 28)
+            lbl.Size = UDim2.new(1, 0, 0, 28)
             lbl.BackgroundTransparency = 1
             lbl.Text = label
             lbl.TextColor3 = Color3.fromRGB(180,180,180)
@@ -205,9 +159,9 @@ function ObsidianRedFusion:CreateWindow(options)
             lbl.Parent = Content
         end
 
-        function tabApi:AddSlider(label, min, max, value, callback)
+        function pageApi:Slider(label, min, max, value, callback)
             local frame = Instance.new("Frame")
-            frame.Size = UDim2.new(1, -24, 0, 44)
+            frame.Size = UDim2.new(1, 0, 0, 44)
             frame.BackgroundTransparency = 1
             frame.Parent = Content
 
@@ -229,10 +183,11 @@ function ObsidianRedFusion:CreateWindow(options)
             local sliderCorner = Instance.new("UICorner", sliderBg)
             sliderCorner.CornerRadius = UDim.new(0, 5)
 
+            local rel = (value - min) / (max - min)
             local sliderBar = Instance.new("Frame", sliderBg)
             sliderBar.BackgroundColor3 = Color3.fromRGB(125,85,255)
             sliderBar.BorderSizePixel = 0
-            sliderBar.Size = UDim2.new((value - min)/(max-min), 0, 1, 0)
+            sliderBar.Size = UDim2.new(rel, 0, 1, 0)
             local barCorner = Instance.new("UICorner", sliderBar)
             barCorner.CornerRadius = UDim.new(0, 5)
 
@@ -260,9 +215,9 @@ function ObsidianRedFusion:CreateWindow(options)
             end)
         end
 
-        function tabApi:AddTextbox(label, default, callback)
+        function pageApi:Textbox(label, default, callback)
             local frame = Instance.new("Frame")
-            frame.Size = UDim2.new(1, -24, 0, 38)
+            frame.Size = UDim2.new(1, 0, 0, 38)
             frame.BackgroundTransparency = 1
             frame.Parent = Content
 
@@ -296,15 +251,61 @@ function ObsidianRedFusion:CreateWindow(options)
             end)
         end
 
-        return tabApi
+        return pageApi
     end
 
-    local self = setmetatable({
-        Window = Window,
-        AddTab = AddTab
-    }, ObsidianRedFusion)
+    -- Create or get page by name
+    function ObsidianRedFusion:Page(tabName)
+        if pages[tabName] then return pages[tabName].api end
 
-    return self
+        -- Tab button
+        local Tab = Instance.new("TextButton")
+        Tab.Size = UDim2.new(0, 120, 1, 0)
+        Tab.BackgroundTransparency = 1
+        Tab.Text = tabName
+        Tab.TextColor3 = Color3.fromRGB(200, 200, 200)
+        Tab.TextSize = 16
+        Tab.Font = Enum.Font.Code
+        Tab.Parent = TabBar
+
+        -- Tab page
+        local Page = Instance.new("Frame")
+        Page.Size = UDim2.new(1, 0, 1, 0)
+        Page.BackgroundTransparency = 1
+        Page.Visible = false
+        Page.Parent = PageContainer
+
+        -- Content Frame (padding/margin)
+        local Content = Instance.new("Frame", Page)
+        Content.BackgroundTransparency = 1
+        Content.Size = UDim2.new(1, -32, 1, -20)
+        Content.Position = UDim2.new(0, 16, 0, 10)
+
+        -- UIListLayout for stacking controls
+        local layout = Instance.new("UIListLayout", Content)
+        layout.Padding = UDim.new(0, 10)
+        layout.SortOrder = Enum.SortOrder.LayoutOrder
+
+        Tab.MouseButton1Click:Connect(function()
+            for _, tab in pairs(tabs) do
+                tab.Page.Visible = false
+                tab.Tab.TextColor3 = Color3.fromRGB(200, 200, 200)
+            end
+            Page.Visible = true
+            Tab.TextColor3 = Color3.fromRGB(125,85,255)
+        end)
+
+        table.insert(tabs, {Tab = Tab, Page = Page})
+        if #tabs == 1 then
+            Tab:Fire("MouseButton1Click")
+        end
+
+        local pageObj = { api = MakePage(Content), Page = Page }
+        pages[tabName] = pageObj
+        return pageObj.api
+    end
+
+    return setmetatable({}, { __index = self })
 end
 
 return setmetatable({}, {__index = ObsidianRedFusion})
