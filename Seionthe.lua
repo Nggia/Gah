@@ -392,7 +392,6 @@ function RedUI:CreateWindow(config)
            local sectionCorner = CreateCorner(6)
            sectionCorner.Parent = sectionFrame
 
--- sectionFrame:AddChild(CreateStroke(COLORS.Outline, 1, 0.5))
            local sectionStroke = CreateStroke(COLORS.Outline, 1, 0.5)
            sectionStroke.Parent = sectionFrame
 
@@ -791,8 +790,11 @@ function RedUI:CreateWindow(config)
                     Font = Enum.Font.Gotham,
                     ClearTextOnFocus = false
                 })
-                textBoxInput:AddChild(CreateCorner(6))
-                textBoxInput:AddChild(CreateStroke(COLORS.Outline, 1, 0.7))
+                local inputCorner = CreateCorner(6)
+                inputCorner.Parent = textBoxInput
+
+                local inputStroke = CreateStroke(COLORS.Outline, 1, 0.7)
+                inputStroke.Parent = textBoxInput
                 
                 local inputPadding = CreateInstance("UIPadding", {
                     Parent = textBoxInput,
@@ -879,9 +881,12 @@ function RedUI:CreateWindow(config)
                     TextXAlignment = Enum.TextXAlignment.Left,
                     Font = Enum.Font.Gotham
                 })
-                dropdownButton:AddChild(CreateCorner(6))
-                dropdownButton:AddChild(CreateStroke(COLORS.Outline, 1, 0.7))
-                
+                local dropdownCorner = CreateCorner(6)
+                dropdownCorner.Parent = dropdownButton
+
+                local dropdownStroke = CreateStroke(COLORS.Outline, 1, 0.7)
+                dropdownStroke.Parent = dropdownButton
+
                 local buttonPadding = CreateInstance("UIPadding", {
                     Parent = dropdownButton,
                     PaddingLeft = UDim.new(0, 10),
