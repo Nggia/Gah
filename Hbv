@@ -1,0 +1,182 @@
+ui = game:GetService("CoreGui"):FindFirstChild("redui")
+if ui then ui:Destroy() end
+
+UserInputService = game:GetService("UserInputService")
+TweenService = game:GetService("TweenService")
+LocalPlayer = game:GetService("Players").LocalPlayer
+
+Reduisceen = Instance.new("ScreenGui")
+Reduisceen.Parent = game:GetService("CoreGui")
+Reduisceen.Name = "redui"
+
+function drag(top,obj)
+dragging=nil
+dragInput=nil
+dragStart=nil
+startPos=nil
+
+function update(input)
+delta=input.Position-dragStart
+obj.Position=UDim2.new(startPos.X.Scale,startPos.X.Offset+delta.X,startPos.Y.Scale,startPos.Y.Offset+delta.Y)
+end
+
+top.InputBegan:Connect(function(input)
+if input.UserInputType==Enum.UserInputType.MouseButton1 then
+dragging=true
+dragStart=input.Position
+startPos=obj.Position
+input.Changed:Connect(function()
+if input.UserInputState==Enum.UserInputState.End then dragging=false end
+end)
+end
+end)
+
+top.InputChanged:Connect(function(input)
+if input.UserInputType==Enum.UserInputType.MouseMovement then
+dragInput=input
+end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+if input==dragInput and dragging then update(input) end
+end)
+end
+
+create={}
+function create:Win(title)
+
+Main=Instance.new("Frame")
+Main.Parent=Reduisceen
+Main.AnchorPoint=Vector2.new(0.5,0.5)
+Main.Position=UDim2.new(0.5,0,0.5,0)
+Main.Size=UDim2.new(0,0,0,0)
+Main.BackgroundColor3=Color3.fromRGB(20,20,20)
+Main.BorderSizePixel=0
+Instance.new("UICorner",Main)
+
+Top=Instance.new("Frame",Main)
+Top.Size=UDim2.new(1,0,0,30)
+Top.BackgroundTransparency=1
+
+drag(Top,Main)
+
+TweenService:Create(Main,TweenInfo.new(0.4),{Size=UDim2.new(0,420,0,360)}):Play()
+
+Title=Instance.new("TextLabel",Main)
+Title.Size=UDim2.new(1,0,0,30)
+Title.BackgroundTransparency=1
+Title.Text=title
+Title.Font=Enum.Font.GothamBold
+Title.TextSize=14
+Title.TextColor3=Color3.fromRGB(200,200,200)
+
+Container=Instance.new("Frame",Main)
+Container.Size=UDim2.new(1,-20,1,-40)
+Container.Position=UDim2.new(0,10,0,30)
+Container.BackgroundColor3=Color3.fromRGB(25,25,25)
+Container.BorderSizePixel=0
+Instance.new("UICorner",Container)
+
+List=Instance.new("UIListLayout",Container)
+List.Padding=UDim.new(0,6)
+
+items={}
+
+function items:Button(text,callback)
+b=Instance.new("TextButton",Container)
+b.Size=UDim2.new(1,0,0,28)
+b.BackgroundColor3=Color3.fromRGB(40,40,40)
+b.Text=text
+b.Font=Enum.Font.Gotham
+b.TextSize=12
+b.TextColor3=Color3.fromRGB(200,200,200)
+Instance.new("UICorner",b)
+
+b.MouseButton1Click:Connect(callback)
+end
+
+function items:Toggle(text,default,callback)
+state=default or false
+
+f=Instance.new("Frame",Container)
+f.Size=UDim2.new(1,0,0,28)
+f.BackgroundColor3=Color3.fromRGB(40,40,40)
+Instance.new("UICorner",f)
+
+lbl=Instance.new("TextLabel",f)
+lbl.Size=UDim2.new(0.7,0,1,0)
+lbl.BackgroundTransparency=1
+lbl.Text=text
+lbl.Font=Enum.Font.Gotham
+lbl.TextSize=12
+lbl.TextColor3=Color3.fromRGB(200,200,200)
+
+btn=Instance.new("TextButton",f)
+btn.Size=UDim2.new(0,40,0,20)
+btn.Position=UDim2.new(1,-50,0.5,-10)
+btn.BackgroundColor3=state and Color3.fromRGB(120,120,120) or Color3.fromRGB(60,60,60)
+btn.Text=""
+Instance.new("UICorner",btn)
+
+btn.MouseButton1Click:Connect(function()
+state=not state
+btn.BackgroundColor3=state and Color3.fromRGB(120,120,120) or Color3.fromRGB(60,60,60)
+callback(state)
+end)
+end
+
+function items:Slider(text,min,max,def,callback)
+
+value=def or min
+
+frame=Instance.new("Frame",Container)
+frame.Size=UDim2.new(1,0,0,50)
+frame.BackgroundColor3=Color3.fromRGB(40,40,40)
+Instance.new("UICorner",frame)
+
+label=Instance.new("TextLabel",frame)
+label.Size=UDim2.new(1,0,0,20)
+label.BackgroundTransparency=1
+label.Text=text.." : "..value
+label.Font=Enum.Font.Gotham
+label.TextSize=12
+label.TextColor3=Color3.fromRGB(200,200,200)
+
+bar=Instance.new("Frame",frame)
+bar.Size=UDim2.new(1,-20,0,6)
+bar.Position=UDim2.new(0,10,1,-15)
+bar.BackgroundColor3=Color3.fromRGB(60,60,60)
+Instance.new("UICorner",bar)
+
+fill=Instance.new("Frame",bar)
+fill.Size=UDim2.new((value-min)/(max-min),0,1,0)
+fill.BackgroundColor3=Color3.fromRGB(120,120,120)
+Instance.new("UICorner",fill)
+
+dragging=false
+
+bar.InputBegan:Connect(function(i)
+if i.UserInputType==Enum.UserInputType.MouseButton1 then dragging=true end
+end)
+
+UserInputService.InputEnded:Connect(function(i)
+if i.UserInputType==Enum.UserInputType.MouseButton1 then dragging=false end
+end)
+
+UserInputService.InputChanged:Connect(function(i)
+if dragging and i.UserInputType==Enum.UserInputType.MouseMovement then
+pos=(i.Position.X-bar.AbsolutePosition.X)/bar.AbsoluteSize.X
+pos=math.clamp(pos,0,1)
+value=math.floor(min+(max-min)*pos)
+fill.Size=UDim2.new(pos,0,1,0)
+label.Text=text.." : "..value
+callback(value)
+end
+end)
+
+end
+
+return items
+end
+
+return create
