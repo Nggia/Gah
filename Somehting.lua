@@ -449,110 +449,91 @@ function create:Win(text)
             end
 
             function items:Drop(text, list, callback)
-                local DropFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
-                DropFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-                DropFrame.Size = UDim2.new(0, 165, 0, 25)
-                DropFrame.ClipsDescendants = true
-                Instance.new("UICorner", DropFrame).CornerRadius = UDim.new(0, 4)
+    local DropFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
+    DropFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+    DropFrame.Size = UDim2.new(0, 165, 0, 25)
+    DropFrame.ClipsDescendants = true
+    Instance.new("UICorner", DropFrame).CornerRadius = UDim.new(0, 4)
 
-                local DropButton = Instance.new("TextButton", DropFrame)
-                DropButton.BackgroundTransparency = 1
-                DropButton.Size = UDim2.new(1, 0, 0, 25)
-                DropButton.Font = Enum.Font.GothamSemibold
-                DropButton.Text = "  " .. text .. " :"
-                DropButton.TextColor3 = Color3.fromRGB(155, 155, 155)
-                DropButton.TextSize = 11.000
-                DropButton.TextXAlignment = Enum.TextXAlignment.Left
+    local DropButton = Instance.new("TextButton", DropFrame)
+    DropButton.BackgroundTransparency = 1
+    DropButton.Size = UDim2.new(1, 0, 0, 25)
+    DropButton.Font = Enum.Font.GothamSemibold
+    DropButton.Text = "  " .. text .. " :"
+    DropButton.TextColor3 = Color3.fromRGB(155, 155, 155)
+    DropButton.TextSize = 11.000
+    DropButton.TextXAlignment = Enum.TextXAlignment.Left
 
-                local DropIcon = Instance.new("ImageLabel", DropButton)
-                DropIcon.BackgroundTransparency = 1
-                DropIcon.AnchorPoint = Vector2.new(0.5, 0.5)
-                DropIcon.Position = UDim2.new(0.9, 0, 0.5, 0)
-                DropIcon.Size = UDim2.new(0, 16, 0, 16)
-                DropIcon.Image = "http://www.roblox.com/asset/?id=6031091004"
-                DropIcon.ImageColor3 = Color3.fromRGB(155, 155, 155)
+    local DropIcon = Instance.new("ImageLabel", DropButton)
+    DropIcon.BackgroundTransparency = 1
+    DropIcon.AnchorPoint = Vector2.new(0.5, 0.5)
+    DropIcon.Position = UDim2.new(0.9, 0, 0.5, 0)
+    DropIcon.Size = UDim2.new(0, 16, 0, 16)
+    DropIcon.Image = "http://www.roblox.com/asset/?id=6031091004"
+    DropIcon.ImageColor3 = Color3.fromRGB(155, 155, 155)
 
-                local DropScroll = Instance.new("ScrollingFrame", DropFrame)
-                DropScroll.BackgroundTransparency = 1
-                DropScroll.BorderSizePixel = 0
-                DropScroll.Position = UDim2.new(0, 0, 0, 25)
-                DropScroll.Size = UDim2.new(1, 0, 1, -25)
-                DropScroll.ScrollBarThickness = 2
+    local DropScroll = Instance.new("ScrollingFrame", DropFrame)
+    DropScroll.BackgroundTransparency = 1
+    DropScroll.BorderSizePixel = 0
+    DropScroll.Position = UDim2.new(0, 0, 0, 25)
+    DropScroll.Size = UDim2.new(1, 0, 1, -25)
+    DropScroll.ScrollBarThickness = 2
+    
+    local DropList = Instance.new("UIListLayout", DropScroll)
+    DropList.Padding = UDim.new(0, 2)
+
+    local dropped = false
+    DropButton.MouseButton1Click:Connect(function()
+        dropped = not dropped
+        if dropped then
+            TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 100)}):Play()
+            TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = -180}):Play()
+        else
+            TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 25)}):Play()
+            TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = 0}):Play()
+        end
+    end)
                 
-                local DropList = Instance.new("UIListLayout", DropScroll)
-                DropList.Padding = UDim.new(0, 2)
-
-                local dropped = false
-                DropButton.MouseButton1Click:Connect(function()
-                    dropped = not dropped
-                    if dropped then
-                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 100)}):Play()
-                        TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = -180}):Play()
-                    else
-                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 25)}):Play()
-                        TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = 0}):Play()
-                    end
-                end)
-
-                for _, v in pairs(list) do
-                    local OptBtn = Instance.new("TextButton", DropScroll)
-                    OptBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-                    OptBtn.BorderSizePixel = 0
-                    OptBtn.Size = UDim2.new(1, 0, 0, 20)
-                    OptBtn.Font = Enum.Font.GothamSemibold
-                    OptBtn.Text = tostring(v)
-                    OptBtn.TextColor3 = Color3.fromRGB(155, 155, 155)
-                    OptBtn.TextSize = 11.000
-
-                    OptBtn.MouseButton1Click:Connect(function()
-                        DropButton.Text = "  " .. text .. " : " .. tostring(v)
-                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 25)}):Play()
-                        TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = 0}):Play()
-                        dropped = false
-                        pcall(callback, v)
-                    end)
-                end
-                DropList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-                    DropScroll.CanvasSize = UDim2.new(0, 0, 0, DropList.AbsoluteContentSize.Y)
-                end)
+    local function UpdateOptions(currentList)
+        -- Xóa toàn bộ các nút cũ hiện tại trong danh sách cuộn
+        for _, v in pairs(DropScroll:GetChildren()) do
+            if v:IsA("TextButton") then 
+                v:Destroy() 
             end
+        end
 
-            function items:TextBox(text, placeholder, callback)
-                local TextFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
-                TextFrame.BackgroundTransparency = 1
-                TextFrame.Size = UDim2.new(0, 165, 0, 45)
+        for _, v in pairs(currentList) do
+            local OptBtn = Instance.new("TextButton", DropScroll)
+            OptBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            OptBtn.BorderSizePixel = 0
+            OptBtn.Size = UDim2.new(1, 0, 0, 20)
+            OptBtn.Font = Enum.Font.GothamSemibold
+            OptBtn.Text = tostring(v)
+            OptBtn.TextColor3 = Color3.fromRGB(155, 155, 155)
+            OptBtn.TextSize = 11.000
 
-                local Title = Instance.new("TextLabel", TextFrame)
-                Title.BackgroundTransparency = 1
-                Title.Position = UDim2.new(0.05, 0, 0, 0)
-                Title.Size = UDim2.new(0, 155, 0, 15)
-                Title.Font = Enum.Font.GothamBold
-                Title.Text = tostring(text)
-                Title.TextColor3 = Color3.fromRGB(155, 155, 155)
-                Title.TextSize = 11.000
-                Title.TextXAlignment = Enum.TextXAlignment.Center
+            OptBtn.MouseButton1Click:Connect(function()
+                DropButton.Text = "  " .. text .. " : " .. tostring(v)
+                TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 25)}):Play()
+                TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = 0}):Play()
+                dropped = false
+                pcall(callback, v)
+            end)
+        end
+  end
+                
+    UpdateOptions(list)
 
-                local BoxFrame = Instance.new("Frame", TextFrame)
-                BoxFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-                BoxFrame.Position = UDim2.new(0.05, 0, 0.4, 0)
-                BoxFrame.Size = UDim2.new(0, 155, 0, 20)
-                Instance.new("UICorner", BoxFrame).CornerRadius = UDim.new(0, 4)
+    DropList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        DropScroll.CanvasSize = UDim2.new(0, 0, 0, DropList.AbsoluteContentSize.Y)
+    end)
 
-                local TBox = Instance.new("TextBox", BoxFrame)
-                TBox.BackgroundTransparency = 1
-                TBox.Size = UDim2.new(1, 0, 1, 0)
-                TBox.Font = Enum.Font.GothamSemibold
-                TBox.PlaceholderText = placeholder
-                TBox.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
-                TBox.Text = ""
-                TBox.TextColor3 = Color3.fromRGB(200, 200, 200)
-                TBox.TextSize = 11.000
-
-                TBox.FocusLost:Connect(function()
-                    if #TBox.Text > 0 then
-                        pcall(callback, TBox.Text)
-                    end
-                end)
+    local dropfunc = {}
+    function dropfunc:Refresh(newList)
+        UpdateOptions(newList)
+    end
+            
+    return dropfunc
             end
 
             function items:Label(text, imageId)
