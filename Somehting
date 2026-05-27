@@ -1,6 +1,9 @@
 local ui = game:GetService("CoreGui"):FindFirstChild("redui")  
 if ui then ui:Destroy() end
 
+local oldToggle = game:GetService("CoreGui"):FindFirstChild("ReduiToggle")
+if oldToggle then oldToggle:Destroy() end
+
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local Red = {RainbowColorValue = 0, HueSelectionPosition = 0}
@@ -119,25 +122,51 @@ function create:Win(text)
     local ClickFrame = Instance.new("Frame", MainSceen)
     ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
     ClickFrame.Position = UDim2.new(0.5, 0, 0.05, 0)
-    ClickFrame.Size = UDim2.new(0, 380, 0, 30)
+    ClickFrame.Size = UDim2.new(0, 410, 0, 30)
     ClickFrame.BackgroundTransparency = 1
     MakeDraggable(ClickFrame, MainSceen)
 
-    TweenService:Create(MainSceen, TweenInfo.new(0.4, Enum.EasingStyle.Back), {Size = UDim2.new(0, 400, 0, 300)}):Play()
+    TweenService:Create(MainSceen, TweenInfo.new(0.4, Enum.EasingStyle.Back), {Size = UDim2.new(0, 430, 0, 300)}):Play()
 
     local library = {toggledui = false}
-    UserInputService.InputBegan:Connect(function(input)
-        if input.KeyCode == Enum.KeyCode.F5 then
-            library.toggledui = not library.toggledui
-            if library.toggledui then
-                TweenService:Create(MainSceen, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 0)}):Play()
-                task.wait(0.3)
-                Reduisceen.Enabled = false
-            else
-                Reduisceen.Enabled = true
-                TweenService:Create(MainSceen, TweenInfo.new(0.4, Enum.EasingStyle.Back), {Size = UDim2.new(0, 400, 0, 300)}):Play()
-            end
+
+    -- TẠO NÚT TOGGLE RỜI
+    local ToggleGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+    ToggleGui.Name = "ReduiToggle"
+    ToggleGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    local ToggleBtn = Instance.new("TextButton", ToggleGui)
+    ToggleBtn.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    ToggleBtn.Position = UDim2.new(0.12, 0, 0.15, 0)
+    ToggleBtn.Size = UDim2.new(0, 45, 0, 45)
+    ToggleBtn.Font = Enum.Font.GothamBold
+    ToggleBtn.Text = "UI"
+    ToggleBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    ToggleBtn.TextSize = 15
+    ToggleBtn.BorderSizePixel = 0
+    Instance.new("UICorner", ToggleBtn).CornerRadius = UDim.new(1, 0)
+    
+    local ToggleStroke = Instance.new("UIStroke", ToggleBtn)
+    ToggleStroke.Color = Color3.fromRGB(255, 255, 255)
+    ToggleStroke.Thickness = 1
+    ToggleStroke.Transparency = 0.5
+    MakeDraggable(ToggleBtn, ToggleBtn)
+
+    local function ToggleUIAction()
+        library.toggledui = not library.toggledui
+        if library.toggledui then
+            TweenService:Create(MainSceen, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 0)}):Play()
+            task.wait(0.3)
+            Reduisceen.Enabled = false
+        else
+            Reduisceen.Enabled = true
+            TweenService:Create(MainSceen, TweenInfo.new(0.4, Enum.EasingStyle.Back), {Size = UDim2.new(0, 430, 0, 300)}):Play()
         end
+    end
+
+    ToggleBtn.MouseButton1Click:Connect(ToggleUIAction)
+    UserInputService.InputBegan:Connect(function(input)
+        if input.KeyCode == Enum.KeyCode.F5 then ToggleUIAction() end
     end)
 
     local NameReal = Instance.new("TextLabel", MainSceen)
@@ -156,13 +185,13 @@ function create:Win(text)
     MainSceen2.Size = UDim2.new(0, 0, 0, 0)
     MainSceen2.ClipsDescendants = true
     Instance.new("UICorner", MainSceen2).CornerRadius = UDim.new(0, 4)
-    MainSceen2:TweenSizeAndPosition(UDim2.new(0, 380, 0, 250), UDim2.new(0.5, 0, 0.54, 0), "Out", "Back", 0.5, true)
+    MainSceen2:TweenSizeAndPosition(UDim2.new(0, 410, 0, 250), UDim2.new(0.5, 0, 0.54, 0), "Out", "Back", 0.5, true)
 
     local ScolTapBarFrame = Instance.new("Frame", MainSceen2)
     ScolTapBarFrame.AnchorPoint = Vector2.new(0.5, 0.5)
     ScolTapBarFrame.BackgroundTransparency = 1
     ScolTapBarFrame.Position = UDim2.new(0.5, 0, 0.07, 0)
-    ScolTapBarFrame.Size = UDim2.new(0, 360, 0, 25)
+    ScolTapBarFrame.Size = UDim2.new(0, 390, 0, 25)
 
     local ScrollingFrame_Menubar = Instance.new("ScrollingFrame", ScolTapBarFrame)
     ScrollingFrame_Menubar.BackgroundTransparency = 1
@@ -177,7 +206,7 @@ function create:Win(text)
     UIListLayout_Menubar.Padding = UDim.new(0, 8)
 
     local Container_Page = Instance.new('Frame', MainSceen2)
-    Container_Page.Size = UDim2.new(0, 360, 0, 210)
+    Container_Page.Size = UDim2.new(0, 390, 0, 210)
     Container_Page.Position = UDim2.new(0.5, 0, 0.55, 0)
     Container_Page.BackgroundTransparency = 1
     Container_Page.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -236,7 +265,7 @@ function create:Win(text)
         
         local UIGridLayout_Pagefrist = Instance.new("UIGridLayout", ScrollingFrame_Pagefrist)
         UIGridLayout_Pagefrist.CellPadding = UDim2.new(0, 8, 0, 8)
-        UIGridLayout_Pagefrist.CellSize = UDim2.new(0, 170, 0, 205)
+        UIGridLayout_Pagefrist.CellSize = UDim2.new(0, 185, 0, 205)
         Instance.new("UIPadding", ScrollingFrame_Pagefrist).PaddingLeft = UDim.new(0, 6)
         Instance.new("UIPadding", ScrollingFrame_Pagefrist).PaddingTop = UDim.new(0, 6)
 
@@ -269,7 +298,7 @@ function create:Win(text)
             function items:Toggle(text, config, callback)
                 local Toggle = Instance.new("Frame", ScrollingFrame_Pageframe)
                 Toggle.BackgroundTransparency = 1
-                Toggle.Size = UDim2.new(0, 150, 0, 25)
+                Toggle.Size = UDim2.new(0, 165, 0, 25)
 
                 local TextButton_Toggle = Instance.new("TextButton", Toggle)
                 TextButton_Toggle.BackgroundTransparency = 1
@@ -279,7 +308,7 @@ function create:Win(text)
                 local TextButton_2_Toggle = Instance.new("TextButton", TextButton_Toggle)
                 TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
                 TextButton_2_Toggle.AnchorPoint = Vector2.new(0.5, 0.5)
-                TextButton_2_Toggle.Position = UDim2.new(0.85, 0, 0.5, 0)
+                TextButton_2_Toggle.Position = UDim2.new(0.88, 0, 0.5, 0)
                 TextButton_2_Toggle.Size = UDim2.new(0, 22, 0, 10)
                 TextButton_2_Toggle.Text = ""
                 Instance.new("UICorner", TextButton_2_Toggle).CornerRadius = UDim.new(0, 30)
@@ -296,7 +325,7 @@ function create:Win(text)
                 TextLabel_Toggle.BackgroundTransparency = 1
                 TextLabel_Toggle.AnchorPoint = Vector2.new(0.5, 0.5)
                 TextLabel_Toggle.Position = UDim2.new(0.35, 0, 0.5, 0)
-                TextLabel_Toggle.Size = UDim2.new(0, 90, 0, 20)
+                TextLabel_Toggle.Size = UDim2.new(0, 100, 0, 20)
                 TextLabel_Toggle.Font = Enum.Font.GothamSemibold
                 TextLabel_Toggle.Text = text
                 TextLabel_Toggle.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -327,7 +356,7 @@ function create:Win(text)
             function items:Button(text, callback)
                 local ButtonFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
                 ButtonFrame.BackgroundTransparency = 1
-                ButtonFrame.Size = UDim2.new(0, 150, 0, 25)
+                ButtonFrame.Size = UDim2.new(0, 165, 0, 25)
 
                 local Button = Instance.new("TextButton", ButtonFrame)
                 Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -349,12 +378,12 @@ function create:Win(text)
             function items:Slider(text, min, max, start, callback)
                 local SliderFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
                 SliderFrame.BackgroundTransparency = 1
-                SliderFrame.Size = UDim2.new(0, 150, 0, 35)
+                SliderFrame.Size = UDim2.new(0, 165, 0, 35)
 
                 local TextLabel_Slider = Instance.new("TextLabel", SliderFrame)
                 TextLabel_Slider.BackgroundTransparency = 1
                 TextLabel_Slider.Position = UDim2.new(0.05, 0, 0, 0)
-                TextLabel_Slider.Size = UDim2.new(0, 90, 0, 15)
+                TextLabel_Slider.Size = UDim2.new(0, 100, 0, 15)
                 TextLabel_Slider.Font = Enum.Font.GothamSemibold
                 TextLabel_Slider.Text = text
                 TextLabel_Slider.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -374,7 +403,7 @@ function create:Win(text)
                 local SliderBar = Instance.new("TextButton", SliderFrame)
                 SliderBar.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                 SliderBar.Position = UDim2.new(0.05, 0, 0.6, 0)
-                SliderBar.Size = UDim2.new(0, 135, 0, 4)
+                SliderBar.Size = UDim2.new(0, 150, 0, 4)
                 SliderBar.Text = ""
                 Instance.new("UICorner", SliderBar).CornerRadius = UDim.new(1, 0)
 
@@ -422,7 +451,7 @@ function create:Win(text)
             function items:Drop(text, list, callback)
                 local DropFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
                 DropFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-                DropFrame.Size = UDim2.new(0, 150, 0, 25)
+                DropFrame.Size = UDim2.new(0, 165, 0, 25)
                 DropFrame.ClipsDescendants = true
                 Instance.new("UICorner", DropFrame).CornerRadius = UDim.new(0, 4)
 
@@ -457,10 +486,10 @@ function create:Win(text)
                 DropButton.MouseButton1Click:Connect(function()
                     dropped = not dropped
                     if dropped then
-                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 150, 0, 100)}):Play()
+                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 100)}):Play()
                         TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = -180}):Play()
                     else
-                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 150, 0, 25)}):Play()
+                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 25)}):Play()
                         TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = 0}):Play()
                     end
                 end)
@@ -477,7 +506,7 @@ function create:Win(text)
 
                     OptBtn.MouseButton1Click:Connect(function()
                         DropButton.Text = "  " .. text .. " : " .. tostring(v)
-                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 150, 0, 25)}):Play()
+                        TweenService:Create(DropFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 165, 0, 25)}):Play()
                         TweenService:Create(DropIcon, TweenInfo.new(0.3), {Rotation = 0}):Play()
                         dropped = false
                         pcall(callback, v)
@@ -491,12 +520,12 @@ function create:Win(text)
             function items:TextBox(text, placeholder, callback)
                 local TextFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
                 TextFrame.BackgroundTransparency = 1
-                TextFrame.Size = UDim2.new(0, 150, 0, 45)
+                TextFrame.Size = UDim2.new(0, 165, 0, 45)
 
                 local Title = Instance.new("TextLabel", TextFrame)
                 Title.BackgroundTransparency = 1
                 Title.Position = UDim2.new(0.05, 0, 0, 0)
-                Title.Size = UDim2.new(0, 140, 0, 15)
+                Title.Size = UDim2.new(0, 155, 0, 15)
                 Title.Font = Enum.Font.GothamBold
                 Title.Text = tostring(text)
                 Title.TextColor3 = Color3.fromRGB(155, 155, 155)
@@ -506,7 +535,7 @@ function create:Win(text)
                 local BoxFrame = Instance.new("Frame", TextFrame)
                 BoxFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
                 BoxFrame.Position = UDim2.new(0.05, 0, 0.4, 0)
-                BoxFrame.Size = UDim2.new(0, 140, 0, 20)
+                BoxFrame.Size = UDim2.new(0, 155, 0, 20)
                 Instance.new("UICorner", BoxFrame).CornerRadius = UDim.new(0, 4)
 
                 local TBox = Instance.new("TextBox", BoxFrame)
@@ -529,7 +558,7 @@ function create:Win(text)
             function items:Label(text, imageId)
                 local LblFrame = Instance.new("Frame", ScrollingFrame_Pageframe)
                 LblFrame.BackgroundTransparency = 1
-                LblFrame.Size = UDim2.new(0, 150, 0, 20)
+                LblFrame.Size = UDim2.new(0, 165, 0, 20)
 
                 local LblText = Instance.new("TextLabel", LblFrame)
                 LblText.BackgroundTransparency = 1
@@ -559,7 +588,7 @@ function create:Win(text)
                 local Line = Instance.new("Frame", ScrollingFrame_Pageframe)
                 Line.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
                 Line.BorderSizePixel = 0
-                Line.Size = UDim2.new(0, 150, 0, 1)
+                Line.Size = UDim2.new(0, 165, 0, 1)
             end
 
             return items
